@@ -1073,6 +1073,8 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       .pd-breaks{margin:0 0 16px;font-size:13px;color:var(--muted);line-height:1.6}
       .pd-done{margin:16px 0 0;font-size:14px;color:var(--text);background:rgba(41,151,255,.1);border:1px solid rgba(41,151,255,.28);border-radius:12px;padding:14px 16px}
       @media (max-width:640px){
+        .pd__head{flex-direction:column;gap:12px}
+        .pd__badge{align-self:flex-start}
         .pd__facts{grid-template-columns:repeat(2,minmax(0,1fr))}
         .pd-modal{padding:10px;align-items:flex-end}
         .pd-modal__panel{width:100%;border-radius:20px 20px 16px 16px;padding:24px 18px}
@@ -1119,7 +1121,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
             $('pd-date').textContent = fmtDate(rows[0].confirmed_on);
             var badge = $('pd-badge');
             if (rows[0].status === 'live') { badge.textContent = 'Live today'; badge.hidden = false; }
-            else { badge.textContent = 'Confirmed ' + fmtDate(rows[0].confirmed_on); badge.hidden = false; }
+            else { badge.textContent = 'Re-confirm before quote'; badge.hidden = false; }
           }).catch(function(){
             $('pd-band').textContent = 'Price on request';
             $('pd-date').textContent = 'Ask us';
