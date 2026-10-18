@@ -189,7 +189,14 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     radial-gradient(46% 44% at 50% 76%,rgba(41,151,255,.15),transparent 72%);
 }
 .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#000 100%)}
-.hero__kicker,.hero__logo,.hero__tagline,.hero__sub,.hero__actions,.hero__art,.scrollcue{position:relative;z-index:2}
+.hero__photo{
+  position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;
+  object-fit:cover;object-position:center;opacity:.16;z-index:1;
+  pointer-events:none;user-select:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 38%,rgba(0,0,0,.65) 72%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 38%,rgba(0,0,0,.65) 72%,transparent 100%);
+}
+.hero__kicker,.hero__logo,.hero__tagline,.hero__sub,.hero__proof,.hero__actions,.hero__art,.scrollcue{position:relative;z-index:2}
 .hero__kicker{
   position:relative;z-index:2;
   font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
@@ -225,9 +232,17 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   padding:0 4px;
   opacity:0;animation:fadeUp .9s var(--ease) .62s forwards;
 }
+.hero__proof{
+  position:relative;z-index:2;
+  margin:15px auto 0;max-width:700px;padding:0 8px;
+  font-size:13px;line-height:1.5;letter-spacing:.01em;color:rgba(245,245,247,.74);
+  text-align:center;text-transform:none;
+  opacity:0;animation:fadeUp .9s var(--ease) .68s forwards;
+}
+.hero__proof strong{color:var(--text);font-weight:600}
 .hero__actions{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;
-  margin-top:30px;opacity:0;animation:fadeUp .9s var(--ease) .74s forwards;
+  margin-top:24px;opacity:0;animation:fadeUp .9s var(--ease) .74s forwards;
 }
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
@@ -649,6 +664,28 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .ship__dl:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4)}
 .ship__dl svg{width:12px;height:12px;stroke:currentColor;stroke-width:1.7;fill:none}
 
+/* ---------- static spec table + supplier documents (P1b) ---------- */
+.spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.spec-card{padding:18px 18px 6px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)}
+.spec-card__title{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
+.spec-card__tag{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:99px;padding:3px 9px;white-space:nowrap}
+.spec-card__tag.is-live{color:var(--blue);border-color:rgba(41,151,255,.4);background:rgba(41,151,255,.08)}
+.spec-table{margin:0}
+.spec-table div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 14px;padding:9px 0;border-top:1px solid var(--line)}
+.spec-table dt{font-size:12px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.spec-table dd{font-size:16px;line-height:1.45;color:var(--text)}
+.docs{margin-top:24px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.12)}
+.docs__title{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.docs__label{margin-top:6px;font-size:16px;line-height:1.5;color:rgba(245,245,247,.8)}
+.docs__note{margin-top:4px;font-size:12px;line-height:1.5;color:var(--muted)}
+.docs__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.doc{display:block;border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:#0A0A0B;transition:border-color .25s ease,transform .25s ease}
+.doc:hover{border-color:rgba(255,255,255,.4);transform:translateY(-1px)}
+.doc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:top center;background:#111}
+.doc__cap{display:flex;align-items:center;min-height:44px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--text);border-top:1px solid var(--line)}
+@media (max-width:700px){.docs__grid{grid-template-columns:1fr}}
+@media (max-width:520px){.spec-grid{grid-template-columns:1fr}.spec-table div{grid-template-columns:1fr;gap:2px}}
+
 /* ---------- fixed WhatsApp (mobile) ---------- */
 .wa-float{
   display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:120;
@@ -736,11 +773,28 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;
   }
-  .hero__logo,.hero__tagline,.hero__sub,.hero__actions,.hero__art{opacity:1}
+  .hero__logo,.hero__tagline,.hero__sub,.hero__proof,.hero__actions,.hero__art{opacity:1}
   .js .reveal{opacity:1;transform:none}
   .statement__text .w{opacity:1}
   .route-pulse{display:none}
 }
+
+/* ---------- accessibility pass (P1b, 18 Oct 2026) ---------- */
+/* labels at least 12px */
+.eyebrow,.hero__kicker,.route__label,.scrollcue,.ticker__set,.statement__meta,.product__kicker,.product__tag,.specs dt,.card__idx,.card__tag,.lines__n,.lines__tag,.lines__status,.step__n,.contact__note,.footer__col h4,.footer__base,.media-card figcaption span,.media-note,.film__steps span,.film__time,.film__tag,.film__cap,.ship__tag,.ship__docs-note,.docs__note,.brand__studio,.panel__head,.panel__row,.art-route text{font-size:12px}
+/* body text at least 16px */
+.hero__tagline,.section-head p,.product__lead,.specs dd,.ship__head p,.ship__name,.ship__detail,.ship__docs-title,.card p,.card--small p,.step p,.film__copy p,.film__steps li,.lines__name,.lines__foot,.lines__foot--fuel,.footer__brand p,.footer__col a,.footer__col span,.proof-strip p,.media-card figcaption,.menu__mail,.skip,.docs__note,.media-note,.film__cap{font-size:16px}
+/* tap targets at least 44px */
+.btn,.ship__dl{min-height:44px}
+.brand{min-height:44px;padding:0 8px;margin-left:-8px}
+.nav__links a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;margin:0 -8px}
+.nav__links a::after{bottom:5px}
+.nav__cta{display:inline-flex;align-items:center;min-height:44px}
+.nav__toggle{width:44px;height:44px}
+.hero__spec{display:inline-flex;align-items:center;min-height:44px;padding:0 8px}
+.proof-strip a{display:inline-flex;align-items:center;min-height:44px}
+.footer__col a{display:flex;align-items:center;min-height:44px;margin-bottom:0}
+.footer__col span{display:flex;align-items:center}
 </style>
 <script type="application/ld+json">
 {
@@ -799,13 +853,15 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero__bg" aria-hidden="true"></div>
+    <img class="hero__photo" src="media/hero-proof.webp" alt="Studio visualisation of castor oil drums on a loading floor" width="1200" height="675" loading="lazy" decoding="async" fetchpriority="low">
     <span class="hero__kicker">Sandhu Exports</span>
     <h1 class="hero__logo"><span class="hero__logo-text">SE7</span><span class="hero__logo-square" aria-hidden="true"></span></h1>
     <p class="hero__tagline">We connect. Trust.</p>
     <p class="hero__sub">Castor oil and castor derivatives, mill-direct from India.</p>
+    <p class="hero__proof"><strong>Castor Oil FSG</strong> · 16 MT net / 20-ft · 200 kg HDPE drums · FOB Mundra</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="start.html">Get a price</a>
-      <a class="btn btn--ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener">WhatsApp
+      <a class="btn btn--ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener">WhatsApp
         <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a class="hero__spec" href="#spec">Spec sheet</a>
@@ -903,7 +959,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       <div class="ship reveal" id="spec">
         <div class="ship__head">
           <h3>What we ship</h3>
-          <p>One live line, two more quoted from the same castor chain.</p>
+          <p>One live line. The next castor products are quoted when a mill prices your grade.</p>
         </div>
         <ul class="ship__list">
           <li>
@@ -913,7 +969,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
           </li>
           <li>
             <span class="ship__name">12-HSA</span>
-            <span class="ship__detail">Quoted on request · 25 kg bags or 25/50 kg · first order 1 × 20-ft · Mundra</span>
+            <span class="ship__detail">Quoted on request · 25 kg bags or 25/50 kg PP or paper bags · first order 1 × 20-ft · Mundra</span>
             <span class="ship__tag">Quoted</span>
           </li>
           <li>
@@ -922,18 +978,69 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
             <span class="ship__tag">On request</span>
           </li>
         </ul>
-        <div class="ship__docs">
-          <div>
-            <p class="ship__docs-title">Download supplier TDS/COA sample</p>
-            <p class="ship__docs-label">Supplier TDS/COA sample. Current lot and batch confirmed at quote.</p>
-            <p class="ship__docs-note">Supplier sample documents — not our shipment.</p>
+        <div class="spec-grid">
+          <article class="spec-card" aria-labelledby="spec-fsg">
+            <h4 class="spec-card__title" id="spec-fsg">Castor Oil FSG <span class="spec-card__tag is-live">Live</span></h4>
+            <dl class="spec-table">
+              <div><dt>Grade</dt><dd>FSG — First Special Grade, BSS-75</dd></div>
+              <div><dt>Viscosity</dt><dd>6.0–9.0 poise at 25 °C</dd></div>
+              <div><dt>Moisture</dt><dd>0.25% max</dd></div>
+              <div><dt>FFA (as oleic)</dt><dd>1.00% max</dd></div>
+              <div><dt>Packing</dt><dd>200 kg HDPE drums on pallets · 80 drums per 20-ft</dd></div>
+              <div><dt>MOQ</dt><dd>1 × 20-ft container (16 MT net)</dd></div>
+              <div><dt>Port</dt><dd>FOB Mundra, India</dd></div>
+              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
+            </dl>
+          </article>
+          <article class="spec-card" aria-labelledby="spec-hsa">
+            <h4 class="spec-card__title" id="spec-hsa">12-HSA <span class="spec-card__tag">Quoted</span></h4>
+            <dl class="spec-table">
+              <div><dt>Grade</dt><dd>12-HSA (12-hydroxystearic acid), flakes or powder</dd></div>
+              <div><dt>Acid value / moisture</dt><dd>Quoted on request — specification confirmed in the quote</dd></div>
+              <div><dt>Packing</dt><dd>25 kg bags, or 25/50 kg PP or paper bags — confirmed at quote</dd></div>
+              <div><dt>MOQ</dt><dd>First order 1 × 20-ft container · mill MOQ confirmed at quote</dd></div>
+              <div><dt>Port</dt><dd>Mundra, India</dd></div>
+              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
+            </dl>
+          </article>
+          <article class="spec-card" aria-labelledby="spec-sebacic">
+            <h4 class="spec-card__title" id="spec-sebacic">Sebacic acid <span class="spec-card__tag">On request</span></h4>
+            <dl class="spec-table">
+              <div><dt>Grade</dt><dd>Sebacic acid, castor-derived</dd></div>
+              <div><dt>Specification</dt><dd>On request — purity, moisture and physical form confirmed at quote</dd></div>
+              <div><dt>Packing</dt><dd>Confirmed at quote</dd></div>
+              <div><dt>MOQ</dt><dd>Confirmed at quote</dd></div>
+              <div><dt>Port</dt><dd>Confirmed at quote</dd></div>
+              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
+            </dl>
+          </article>
+          <article class="spec-card" aria-labelledby="spec-dco">
+            <h4 class="spec-card__title" id="spec-dco">DCO <span class="spec-card__tag">On request</span></h4>
+            <dl class="spec-table">
+              <div><dt>Grade</dt><dd>DCO (dehydrated castor oil)</dd></div>
+              <div><dt>Specification</dt><dd>On request — grade, viscosity and acid value confirmed at quote</dd></div>
+              <div><dt>Packing</dt><dd>Drums or liquid bulk containers — confirmed at quote</dd></div>
+              <div><dt>MOQ</dt><dd>Confirmed at quote</dd></div>
+              <div><dt>Port</dt><dd>Confirmed at quote</dd></div>
+              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="docs" id="coa">
+          <div class="docs__head">
+            <h4 class="docs__title">Supplier documents — COA and TDS</h4>
+            <p class="docs__label">Supplier COA sample. Current lot and batch confirmed at quote.</p>
+            <p class="docs__note">Supplier sample documents — not our shipment, our lot or a live certificate.</p>
           </div>
-          <div class="ship__docs-links">
-            <a class="ship__dl" href="proof-media/tds-fsg-extract.png" download>TDS (PNG)
-              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v6M3.5 5.5 6 8l2.5-2.5M2.5 10h7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="docs__grid">
+            <a class="doc" href="proof-media/coa-fsg-extract.png" target="_blank" rel="noopener">
+              <img src="proof-media/coa-fsg-extract.png" alt="Supplier COA sample for Castor Oil FSG: specification table with required parameters and observed results, including moisture 0.16%, FFA 0.52% and viscosity 7.3 poise at 25 °C. Supplier name redacted." width="1697" height="1208" loading="lazy" decoding="async">
+              <span class="doc__cap">COA sample · PNG</span>
             </a>
-            <a class="ship__dl" href="proof-media/coa-fsg-extract.png" download>COA (PNG)
-              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v6M3.5 5.5 6 8l2.5-2.5M2.5 10h7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a class="doc" href="proof-media/tds-fsg-extract.png" target="_blank" rel="noopener">
+              <img src="proof-media/tds-fsg-extract.png" alt="Supplier TDS sample for Castor Oil First Special Grade, FSG BSS-75: parameter and specification table covering appearance, moisture, FFA, acid value and viscosity. Supplier name redacted." width="1697" height="1443" loading="lazy" decoding="async">
+              <span class="doc__cap">TDS sample · PNG</span>
             </a>
           </div>
         </div>
@@ -1148,7 +1255,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       <div class="contact__actions reveal">
         <a class="btn btn--primary" href="start.html">Send your details</a>
         <a class="btn btn--ghost" href="mailto:hello@se7.studio?subject=Price%20request%20SE7">hello@se7.studio</a>
-        <a class="btn btn--ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn--ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="contact__note reveal">No fee to see a price · Sandhu Exports, Prague</div>
     </div>
@@ -1173,7 +1280,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <div class="footer__col">
       <h4>Contact</h4>
       <a href="mailto:hello@se7.studio">hello@se7.studio</a>
-      <a href="https://wa.me/420792487976" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener">WhatsApp</a>
       <span>Prague, Czech Republic</span>
     </div>
   </div>
@@ -1385,7 +1492,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   if (year) year.textContent = String(new Date().getFullYear());
 })();
 </script>
-<a class="wa-float" href="https://wa.me/420792487976" target="_blank" rel="noopener" aria-label="Message SE7 on WhatsApp">
+<a class="wa-float" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener" aria-label="Message SE7 on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 </a>
 </body>

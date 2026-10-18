@@ -291,6 +291,17 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .js .intro .eyebrow,.js .intro h1,.js .intro__lead,.js .intro__meta,.js .panel,.js .direct,.js .next{opacity:1;transform:none}
 }
+
+/* ---------- accessibility pass (P1b, 18 Oct 2026) ---------- */
+/* labels at least 12px */
+.eyebrow,.intro__meta,.brand__studio,.field label,.role legend,.quick__head span,.next__n,.footer__base,.more{font-size:12px}
+/* body text at least 16px */
+.panel__head p,.intro__lead,.sent p,.next__item p,.footer__brand p,.footer__links,.quick__note,.direct,.field__hint,.form__status,.form__note,.btn-ghost,.skip,.more{font-size:16px}
+.field input,.field textarea{font-size:16px}
+/* tap targets at least 44px */
+.submit,.nav__back,.direct__links a,.footer__links a,.btn-ghost{display:inline-flex;align-items:center;min-height:44px}
+.footer__links a{padding:0 6px;margin:0 -6px}
+.brand{min-height:44px;padding:0 8px;margin-left:-8px}
 </style>
 </head>
 <body>
@@ -361,6 +372,8 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
 
     <form action="https://formsubmit.co/ajax/sandhuprague@gmail.com" method="post" data-endpoint="https://formsubmit.co/ajax/sandhuprague@gmail.com" id="detailsForm">
       <input type="text" name="_honey" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source_page" id="fullSource" value="">
+      <input type="hidden" name="tap_time" id="fullTap" value="">
 
       <fieldset class="role">
         <legend>I am a <span class="req">*</span></legend>
@@ -437,7 +450,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
     <span>Prefer directly?</span>
     <div class="direct__links">
       <a href="mailto:hello@se7.studio">hello@se7.studio</a>
-      <a href="https://wa.me/420792487976" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a href="https://linkedin.com/in/aryansandhu07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </section>
@@ -511,6 +524,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
 
     quick.addEventListener('submit', function (e) {
       e.preventDefault();
+      stampTap();
 
       var honey = quick.querySelector('input[name="_honey"]');
       if (honey && honey.value !== '') return;
@@ -539,7 +553,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
           quick.innerHTML = '<div class="sent" role="status">' +
             '<span class="sent__dot" aria-hidden="true"></span>' +
             '<h3>Received. We reply within one working day.</h3>' +
-            '<a class="btn-ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
+            '<a class="btn-ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
             '</div>';
         })
         .catch(function () {
@@ -560,6 +574,15 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
 
   var status = document.getElementById('formStatus');
   var button = form.querySelector('.submit');
+  var fullSource = document.getElementById('fullSource');
+  var fullTap = document.getElementById('fullTap');
+
+  if (fullSource) {
+    var fullSrc = window.location.pathname + (window.location.search || '');
+    if (document.referrer) fullSrc += ' | from ' + document.referrer;
+    fullSource.value = fullSrc;
+  }
+  if (fullTap) fullTap.value = new Date().toISOString();
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -568,6 +591,8 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
     if (honey && honey.value !== '') return;
 
     var data = new FormData(form);
+    data.set('source_page', fullSource ? fullSource.value : '');
+    data.set('tap_time', new Date().toISOString());
     data.set('_subject', 'SITE - ' + (data.get('role') || 'inquiry') + ' - ' + (data.get('country') || '') + ' - ' + String(data.get('product_specification') || '').slice(0, 60));
     data.set('_replyto', data.get('email') || '');
     data.set('_honey', '');
@@ -588,7 +613,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
           '<span class="sent__dot" aria-hidden="true"></span>' +
           '<h3>Received.</h3>' +
           '<p>We reply within one working day. If it is urgent, message us on WhatsApp.</p>' +
-          '<a class="btn-ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
+          '<a class="btn-ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
           '</div>';
       })
       .catch(function () {
