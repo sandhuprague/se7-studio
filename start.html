@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandhu Exporters — Sourcing Inquiry</title>
+  <meta name="description" content="Sandhu Exporters sourcing inquiry — tell us the product, grade and quantity and get a price back within a day. Castor oil and derivatives first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FCFCFA;
+      --ink: #141414;
+      --red: #E23A2E;
+      --muted: #6b6b66;
+      --border: #d9d7d0;
+      --white: #ffffff;
+      --focus-ring: rgba(226, 58, 46, 0.15);
+      --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Motif */
+    .square-accent {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--red);
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Top Bar */
+    header {
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .header-contact {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 56px 0 44px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.35rem;
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    .hero-sub .highlight {
+      font-weight: 600;
+    }
+
+    .trust-line {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .trust-line strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 48px 0 56px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .role-selection {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .role-label {
+      font-size: 0.8rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    .radio-chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .radio-chip {
+      position: relative;
+    }
+
+    .radio-chip input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .chip-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      color: var(--muted);
+    }
+
+    .radio-chip input[type="radio"]:focus-visible + .chip-button {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .radio-chip input[type="radio"]:checked + .chip-button {
+      background-color: var(--ink);
+      border-color: var(--ink);
+      color: var(--white);
+    }
+
+    /* Field Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.78rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    .req {
+      color: var(--red);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 12px 14px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      -webkit-appearance: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px var(--focus-ring);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .field-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Submit Section */
+    .submit-area {
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--red);
+      color: var(--white);
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 16px 36px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.05s ease;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .submit-button:hover {
+      background-color: #cb3126;
+    }
+
+    .submit-button:active {
+      transform: translateY(1px);
+    }
+
+    .submit-guarantee {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .submit-guarantee strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Direct Contact Strip */
+    .direct-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background-color: #F6F6F2;
+      padding: 24px 0;
+    }
+
+    .direct-strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    .direct-label {
+      color: var(--muted);
+    }
+
+    .direct-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .direct-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0 44px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    @media (min-width: 640px) {
+      .submit-button {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 40px 0 32px;
+      }
+      .hero h1 {
+        font-size: 1.85rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .header-inner {
+        height: 58px;
+      }
+      .header-contact {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+<link rel="apple-touch-icon" href="favicon-180.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>/* ===== SE7 site nav (shared) ===== */
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 22px;border-bottom:1px solid #d9d7d0;background:#FCFCFA;position:sticky;top:0;z-index:50;font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif}
+.site-nav .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:#141414;font-weight:700;letter-spacing:.14em;font-size:12px}
+.site-nav .brand .lm{font-weight:700}
+.site-nav .brand .nsq{width:8px;height:8px;background:#E23A2E;display:inline-block}
+.site-nav .links{display:flex;align-items:center;gap:20px;font-size:13px}
+.site-nav .links a{color:#141414;text-decoration:none;letter-spacing:.02em}
+.site-nav .links a:hover{color:#E23A2E}
+.site-nav .cta{background:#E23A2E;color:#fff !important;padding:9px 16px;font-weight:600}
+.site-nav .cta:hover{background:#c53026}
+a.ctabtn{display:inline-block;background:#E23A2E;color:#fff;text-decoration:none;font-weight:600;padding:12px 24px;margin:12px 0 2px;font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;letter-spacing:.02em}
+a.ctabtn:hover{background:#c53026}
+@media(max-width:760px){.site-nav .navlink{display:none}.site-nav{padding:12px 14px}}
+
+</style>
+<link rel="stylesheet" href="theme-cinema.css">
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="index.html"><span class="lm">SE7</span><span class="nsq"></span><span class="nb">SANDHU EXPORTERS</span></a>
+  <div class="links">
+    <a class="navlink" href="index.html">Home</a>
+    <a class="navlink" href="products.html">Products</a>
+    <a class="navlink" href="about.html">About</a>
+    <a class="navlink" href="mailto:sandhuprague@gmail.com">Email</a>
+    <a class="cta" href="start.html">Send your details</a>
+  </div>
+</nav>
+
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Tell us what you need — a price back within a day.</h1>
+        <p class="hero-sub">
+          Importers: send the item and the quantity. Factories: send your product and capacity. <span class="highlight">Castor oil and derivatives first.</span>
+        </p>
+        <div class="trust-line">
+          <span class="square-accent" style="margin-top: 5px;" aria-hidden="true"></span>
+          <div>
+            <strong>Groundwork done:</strong> 560+ factories and 1,300+ buyer companies researched.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+      <div class="container">
+        <form action="https://formsubmit.co/ajax/sandhuprague@gmail.com" method="post" data-endpoint="https://formsubmit.co/ajax/sandhuprague@gmail.com" id="detailsForm">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          
+          <!-- Role selector -->
+          <div class="role-selection">
+            <span class="role-label">I am a <span class="req">*</span></span>
+            <div class="radio-chips">
+              <div class="radio-chip">
+                <input type="radio" name="role" id="role-importer" value="importer" required checked>
+                <label for="role-importer" class="chip-button">Importer / Buyer</label>
+              </div>
+              <div class="radio-chip">
+                <input type="radio" name="role" id="role-factory" value="factory" required>
+                <label for="role-factory" class="chip-button">Factory / Supplier</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Basic Contact Fields -->
+          <div class="grid-2">
+            <div class="field-group">
+              <label for="fullName">Your name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="name" required autocomplete="name" placeholder="e.g. Arun Sandhu">
+            </div>
+
+            <div class="field-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" autocomplete="organization" placeholder="e.g. Brenntag AG or Shree Chem">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field-group">
+              <label for="country">Country <span class="req">*</span></label>
+              <input type="text" id="country" name="country" required autocomplete="country-name" placeholder="e.g. Germany, UAE, India">
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="name@company.com">
+            </div>
+          </div>
+
+          <div class="field-group full-width">
+            <label for="phone">WhatsApp or phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+420 ... or +91 ...">
+          </div>
+
+          <!-- Trade Details -->
+          <div class="field-group full-width">
+            <label for="productSpec">Product &amp; specification <span class="req">*</span></label>
+            <textarea id="productSpec" name="product_specification" required rows="3" placeholder="e.g. First Special Grade Castor Oil (FSG), 12-HSA flakes, Ricinoleic Acid, etc."></textarea>
+            <span class="field-hint">Include grades, chemical purity, or packing preferences (ISO tank, drums, flexi).</span>
+          </div>
+
+          <div class="grid-2">
+            <div class="field-group">
+              <label for="quantity">Quantity &amp; how often</label>
+              <input type="text" id="quantity" name="quantity_frequency" placeholder="e.g. 1 FCL/month, 80 MT spot, trial order">
+            </div>
+
+            <div class="field-group">
+              <label for="destination">Destination port or market</label>
+              <input type="text" id="destination" name="destination" placeholder="e.g. Rotterdam, Hamburg, Jebel Ali">
+            </div>
+          </div>
+
+          <div class="field-group full-width">
+            <label for="notes">Anything else</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Target pricing, required payment terms (LC/TT), standard certifications (COA, REACH), or timeline."></textarea>
+          </div>
+
+          <!-- Submission -->
+          <div class="submit-area">
+            <button type="submit" class="submit-button">Send my details</button>
+            <p class="submit-guarantee">
+              <span class="square-accent" aria-hidden="true"></span>
+              <span><strong>No fee to see a price.</strong> We reply within a day.</span>
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- Direct Contact Strip -->
+    <section class="direct-strip">
+      <div class="container">
+        <div class="direct-strip-inner">
+          <span class="direct-label">Prefer directly?</span>
+          <div class="direct-links">
+            <a href="mailto:sandhuprague@gmail.com" class="direct-link-item">
+              <span>Email: sandhuprague@gmail.com</span>
+            </a>
+            <a href="https://wa.me/420792487976" class="direct-link-item" target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp: Open chat</span>
+            </a>
+            <a href="https://linkedin.com/in/aryansandhu07" class="direct-link-item" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>Sandhu Exporters · Prague · India → Europe and the Gulf sourcing.</div>
+        <div>Verified Indian factories. Mill-direct FOB.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('detailsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value !== '') return;
+      var data = new FormData(form);
+      data.set('_subject', 'SITE - ' + (data.get('role') || 'inquiry') + ' - ' + (data.get('country') || '') + ' - ' + String(data.get('product_specification') || '').slice(0, 60));
+      data.set('_replyto', data.get('email') || '');
+      data.set('_honey', '');
+      var button = form.querySelector('.submit-button');
+      if (button) { button.disabled = true; button.textContent = 'Sending...'; }
+      fetch(form.getAttribute('data-endpoint'), { method: 'POST', body: data })
+        .then(function(r) { if (!r.ok) throw new Error('relay'); return r; })
+        .then(function() {
+          form.innerHTML = '<p class="submit-guarantee"><span class="square-accent" aria-hidden="true"></span><span><strong>Received — we reply within a day.</strong></span></p>';
+        })
+        .catch(function() {
+          if (button) { button.disabled = false; button.textContent = 'Send my details'; }
+          form.insertAdjacentHTML('beforeend', '<p class="field-hint">Could not send — please email sandhuprague@gmail.com or use WhatsApp.</p>');
+        });
+    });
+  </script>
+</body>
+</html>

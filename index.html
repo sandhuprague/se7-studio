@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE7 Studio — Sourcing from India, made simple | Sandhu Exporters</title>
+<meta name="description" content="One desk between buyers in Europe and the Gulf, and verified makers in India. Tell us what you need — a mill-direct price comes back within a day.">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#0B0B0B;--ink:#F3F1EA;--cream:#F6F5F0;--soft:#C9C7C0;--muted:#9C9A91;--line:#2B2B28;--card:#171715;--red:#E23A2E;
+--fh:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;--fb:'Manrope',ui-sans-serif,system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--deep)}
+body{background:var(--deep);color:#E9E7E0;font-family:var(--fb);line-height:1.55;font-size:16px}
+::selection{background:rgba(226,58,46,.35);color:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+.sq{display:inline-block;width:8px;height:8px;background:var(--red);vertical-align:middle}
+/* nav */
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(11,11,11,.93);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50;font-family:var(--fh)}
+.site-nav .brand{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--cream)}
+.site-nav .links{display:flex;align-items:center;gap:18px;font-size:13px}
+.site-nav .links a{color:#DAD8D1;letter-spacing:.02em}
+.site-nav .links a:hover{color:var(--red)}
+.site-nav .cta{background:var(--red);color:#fff!important;padding:9px 15px;font-weight:600}
+.site-nav .cta:hover{background:#c53026}
+@media(max-width:700px){.site-nav .navlink{display:none}.site-nav{padding:11px 14px}}
+/* hero */
+.hero{padding:34px 0 0}
+.kicker{font-family:var(--fh);font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--red);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-family:var(--fh);font-size:2rem;line-height:1.14;letter-spacing:-.02em;margin-bottom:12px;color:var(--cream)}
+.hero .lead{font-size:1.02rem;color:var(--soft);max-width:600px;margin-bottom:10px}
+.trust{font-size:.82rem;color:var(--muted);margin-bottom:22px}
+.trust .sq{width:7px;height:7px;margin-right:7px}
+.hero-band{margin:0 auto;max-width:720px;padding:0 18px}
+.hero-band img{width:100%;height:190px;object-fit:cover;display:block;filter:saturate(.96)}
+@media(min-width:700px){.hero-band img{height:260px}.hero h1{font-size:2.6rem}}
+/* fork */
+.fork{padding:30px 0 6px}
+.fork h2{font-family:var(--fh);font-size:1.4rem;letter-spacing:-.01em;margin-bottom:4px;color:var(--cream)}
+.fork .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.door{display:block;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:18px 18px;margin-bottom:12px;cursor:pointer;font-family:var(--fb);transition:border-color .15s,transform .06s;position:relative}
+.door:hover{border-color:var(--cream)}
+.door:active{transform:translateY(1px)}
+.door .dlab{font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--red);text-transform:uppercase}
+.door .dmain{font-family:var(--fh);font-size:1.12rem;font-weight:600;margin:6px 0 3px;letter-spacing:-.01em;color:var(--cream)}
+.door .dsub{font-size:.85rem;color:var(--muted)}
+.door .arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:var(--fh);font-size:1.3rem;color:var(--red)}
+/* panels */
+.role-panel{display:none;padding:6px 0 8px}
+.role-panel.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:22px 20px;margin-top:6px}
+.card h3{font-family:var(--fh);font-size:1.3rem;letter-spacing:-.01em;margin-bottom:14px;color:var(--cream)}
+.card ul{list-style:none;margin-bottom:14px}
+.card li{padding-left:18px;position:relative;margin-bottom:10px;font-size:.97rem;color:#C9C7C0}
+.card li::before{content:"";position:absolute;left:0;top:.48em;width:7px;height:7px;background:var(--red)}
+.fact{font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-bottom:16px}
+.fact b{color:var(--cream)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--red);color:#fff;font-family:var(--fh);font-weight:600;font-size:.95rem;padding:14px 22px;border-radius:10px}
+.btn:hover{background:#c53026}
+.btn.ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--cream)}
+.switchline{margin-top:14px;font-size:.85rem;color:var(--muted)}
+.switchline a{color:var(--red);font-weight:600}
+/* video */
+.videos{padding:34px 0 8px}
+.videos h2{font-family:var(--fh);font-size:1.4rem;letter-spacing:-.01em;margin-bottom:4px;color:var(--cream)}
+.videos .sub{color:var(--soft);font-size:.95rem;margin-bottom:16px}
+.vplayer{background:#000;border-radius:12px;overflow:hidden;margin-bottom:10px;border:1px solid var(--line)}
+.vplayer video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.vstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.vthumb{background:transparent;border:2px solid transparent;border-radius:10px;padding:0;cursor:pointer;overflow:hidden;position:relative;font-family:var(--fb)}
+.vthumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;opacity:.85}
+.vthumb span{display:block;font-size:10px;font-family:var(--fh);font-weight:600;letter-spacing:.06em;color:#CFCDC6;padding:6px 2px 2px;text-align:left}
+.vthumb:hover img{opacity:1}
+.vthumb.on{border-color:var(--red)}
+.vthumb.on img{opacity:1}
+.vthumb.on span{color:var(--cream)}
+/* contact */
+.contact{padding:34px 0 10px}
+.contact h2{font-family:var(--fh);font-size:1.3rem;letter-spacing:-.01em;margin-bottom:14px;color:var(--cream)}
+.cells{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:8px}
+@media(min-width:640px){.cells{grid-template-columns:repeat(3,1fr)}}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.cell .lab{font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--muted);margin-bottom:4px}
+.cell a{font-weight:600;font-size:.92rem;color:var(--cream);border-bottom:1px solid rgba(226,58,46,.4)}
+.cell a:hover{color:var(--red);border-bottom-color:var(--red)}
+/* footer */
+.foot{border-top:1px solid var(--line);margin-top:30px;padding:20px 0 34px;font-size:.78rem;color:var(--muted)}
+.foot .row{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html"><span>SE7</span><span class="sq"></span><span>SANDHU EXPORTERS</span></a>
+  <div class="links">
+    <a class="navlink" href="products.html">Products</a>
+    <a class="navlink" href="about.html">About</a>
+    <a class="cta" href="start.html">Get a price</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="kicker">SE7 Studio &middot; Sourcing desk &middot; Prague</div>
+    <h1>Sourcing from India, without the runaround.</h1>
+    <p class="lead">One desk between buyers in Europe and the Gulf, and verified makers in India. Castor oil and derivatives first.</p>
+    <p class="trust"><span class="sq"></span>560+ Indian factories researched. A name is shared only after checks.</p>
+  </section>
+</div>
+<div class="hero-band"><img src="media/hero.jpg" width="1280" height="640" alt="Container port" fetchpriority="high"></div>
+
+<div class="wrap">
+  <section class="fork">
+    <h2>What brings you here?</h2>
+    <p class="sub">Tap one — you&rsquo;ll only see what you need.</p>
+
+    <a class="door" href="start.html" onclick="pick('buyer');return false;">
+      <span class="dlab">Buyer</span>
+      <span class="dmain">I want to buy — goods from India</span>
+      <span class="dsub">Importer &middot; trader &middot; brand</span>
+      <span class="arrow">&rarr;</span>
+    </a>
+    <a class="door" href="start.html" onclick="pick('seller');return false;">
+      <span class="dlab">Supplier</span>
+      <span class="dmain">I want to sell — I have a factory</span>
+      <span class="dsub">Mill &middot; factory &middot; maker in India</span>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </section>
+
+  <section class="role-panel" id="panel-buyer">
+    <div class="card">
+      <h3>You buy. We find the maker.</h3>
+      <ul>
+        <li>One line is enough: send the item and the quantity.</li>
+        <li>Within a day: a mill-direct FOB price — from the factory itself, ready to compare.</li>
+        <li>No fee to see a price. Our fee is agreed in writing before anything moves.</li>
+      </ul>
+      <p class="fact"><b>Live first line:</b> castor oil — 16&nbsp;MT net per 20-ft container &middot; 200&nbsp;kg HDPE drums on pallets &middot; loads at Mundra.</p>
+      <div class="ctas">
+        <a class="btn" href="start.html">Send your details &rarr;</a>
+        <a class="btn ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p class="switchline">Not you? <a href="#" onclick="pick('seller');return false;">I want to sell instead &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="role-panel" id="panel-seller">
+    <div class="card">
+      <h3>You make it. We bring the buyers.</h3>
+      <ul>
+        <li>Send your product and capacity — one message is enough.</li>
+        <li>This desk matches Indian factories to buyer enquiries as it opens.</li>
+        <li>Your name stays with us until you say otherwise — everything in writing.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn" href="https://wa.me/420792487976" target="_blank" rel="noopener">WhatsApp us &rarr;</a>
+        <a class="btn ghost" href="mailto:sandhuprague@gmail.com">Email instead</a>
+      </div>
+      <p class="switchline">Not you? <a href="#" onclick="pick('buyer');return false;">I want to buy instead &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="videos">
+    <div class="kicker">From the source</div>
+    <h2>See how the desk works — in 60 seconds.</h2>
+    <p class="sub">Short films from the sourcing floor. New one every week.</p>
+    <div class="vplayer"><video id="vplayer" controls playsinline preload="none" poster="media/ep01-poster.jpg" src="media/ep01-the-risk-web.mp4"></video></div>
+    <div class="vstrip">
+      <button class="vthumb on" onclick="playV(0)"><img loading="lazy" src="media/ep01-poster.jpg" alt="EP 01 — The Risk"><span>EP 01 &middot; THE RISK</span></button>
+      <button class="vthumb" onclick="playV(1)"><img loading="lazy" src="media/ep02-poster.jpg" alt="EP 02 — What We Do"><span>EP 02 &middot; WHAT WE DO</span></button>
+      <button class="vthumb" onclick="playV(2)"><img loading="lazy" src="media/ep03-poster.jpg" alt="EP 03 — Mill-Direct"><span>EP 03 &middot; MILL-DIRECT</span></button>
+      <button class="vthumb" onclick="playV(3)"><img loading="lazy" src="media/one-form-poster.jpg" alt="The One Form"><span>THE ONE FORM</span></button>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Start with one line: the item and the quantity.</h2>
+    <div class="cells">
+      <div class="cell"><div class="lab">EMAIL</div><a href="mailto:sandhuprague@gmail.com">sandhuprague@gmail.com</a></div>
+      <div class="cell"><div class="lab">WHATSAPP</div><a href="https://wa.me/420792487976" target="_blank" rel="noopener">+420 792 487 976</a></div>
+      <div class="cell"><div class="lab">LINKEDIN</div><a href="https://www.linkedin.com/in/aryansandhu07" target="_blank" rel="noopener">in/aryansandhu07</a></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="row"><span>Sandhu Exporters (SE7) &middot; Prague</span><span>India &rarr; Europe and the Gulf</span><span>se7.studio</span></div>
+  </footer>
+</div>
+
+<script>
+function pick(role){
+  var panels=document.querySelectorAll('.role-panel');
+  for(var i=0;i<panels.length;i++){panels[i].className='role-panel';}
+  var el=document.getElementById('panel-'+role);
+  if(el){el.className='role-panel on';el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+var VIDS=[
+  ["media/ep01-the-risk-web.mp4","media/ep01-poster.jpg"],
+  ["media/ep02-what-we-do-web.mp4","media/ep02-poster.jpg"],
+  ["media/ep03-mill-direct-web.mp4","media/ep03-poster.jpg"],
+  ["media/one-form-web.mp4","media/one-form-poster.jpg"]
+];
+function playV(i){
+  var p=document.getElementById("vplayer");
+  if(!p)return;
+  p.pause();p.src=VIDS[i][0];p.poster=VIDS[i][1];p.load();
+  var th=document.querySelectorAll(".vthumb");
+  for(var k=0;k<th.length;k++){th[k].className=(k===i)?"vthumb on":"vthumb";}
+}
+</script>
+</body>
+</html>
