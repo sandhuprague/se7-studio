@@ -7,7 +7,7 @@
 <meta name="description" content="Sandhu Exports' SE7 desk connects buyers in Europe and the Gulf with verified manufacturers in India. Castor oil FSG live; nine India-first lines, one team in Prague.">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://viqlbbdietthidicsvne.supabase.co https://formsubmit.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
@@ -958,6 +958,305 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
           </div>
         </div>
       </div>
+
+      <!-- PRICE DESK -->
+      <div class="pd reveal" id="price-desk">
+        <div class="pd__head">
+          <div>
+            <span class="pd__eyebrow">Price desk</span>
+            <h3 class="pd__title">Castor Oil FSG — today's price</h3>
+          </div>
+          <span class="pd__badge" id="pd-badge" hidden></span>
+        </div>
+        <dl class="pd__facts">
+          <div><dt>Grade</dt><dd>FSG · BSS-75</dd></div>
+          <div><dt>Packing</dt><dd>200 kg HDPE drums on pallets</dd></div>
+          <div><dt>MOQ</dt><dd>16 MT net · 1 × 20-ft</dd></div>
+          <div><dt>Port</dt><dd>FOB Mundra</dd></div>
+          <div><dt>Indicative</dt><dd id="pd-band">Loading…</dd></div>
+          <div><dt>Last confirmed</dt><dd id="pd-date">—</dd></div>
+        </dl>
+        <div class="pd__actions">
+          <button class="btn btn--primary" type="button" id="pd-open">See today's exact price</button>
+          <p class="pd__note">No fee. One email code, valid 10 minutes.</p>
+        </div>
+      </div>
+
+      <div class="pd-modal" id="pd-modal" hidden>
+        <div class="pd-modal__backdrop" data-pd-close></div>
+        <div class="pd-modal__panel" role="dialog" aria-modal="true" aria-labelledby="pd-step-title">
+          <button class="pd-modal__x" type="button" data-pd-close aria-label="Close">&times;</button>
+
+          <div class="pd-step" data-step="email">
+            <h4 id="pd-step-title">Today's exact price</h4>
+            <p class="pd-step__lead">Enter your email and we send a 6-digit code. No account, no fee.</p>
+            <label class="pd-field">Email
+              <input type="email" id="pd-email" autocomplete="email" inputmode="email" placeholder="you@company.com" required>
+            </label>
+            <label class="pd-field">WhatsApp <span>(optional)</span>
+              <input type="tel" id="pd-wa" autocomplete="tel" inputmode="tel" placeholder="+420 …">
+            </label>
+            <button class="btn btn--primary pd-wide" type="button" id="pd-send">Email me the code</button>
+            <p class="pd-err" id="pd-err1" role="alert"></p>
+          </div>
+
+          <div class="pd-step" data-step="code" hidden>
+            <h4>Enter your code</h4>
+            <p class="pd-step__lead">We sent a 6-digit code to <b id="pd-who"></b>. It expires in 10 minutes.</p>
+            <label class="pd-field">Code
+              <input id="pd-code" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" placeholder="000000">
+            </label>
+            <button class="btn btn--primary pd-wide" type="button" id="pd-verify">Open the price</button>
+            <button class="pd-link" type="button" id="pd-resend">Send a new code</button>
+            <p class="pd-err" id="pd-err2" role="alert"></p>
+          </div>
+
+          <div class="pd-step" data-step="price" hidden>
+            <div id="pd-live" hidden>
+              <h4>Your price</h4>
+              <p class="pd-price"><span id="pd-price">—</span> <small>USD / MT</small></p>
+              <p class="pd-step__lead" id="pd-price-meta"></p>
+              <div class="pd-breaks" id="pd-breaks"></div>
+              <label class="pd-field">Quantity
+                <input id="pd-qty" placeholder="16 MT" autocomplete="off">
+              </label>
+              <button class="btn btn--primary pd-wide" type="button" id="pd-lock">Lock this price</button>
+              <p class="pd-err" id="pd-err3" role="alert"></p>
+            </div>
+            <div id="pd-request" hidden>
+              <h4>Price on request</h4>
+              <p class="pd-step__lead" id="pd-request-note">The last confirmed price is older than 7 days, so we re-confirm with the mill before quoting.</p>
+              <label class="pd-field">Quantity
+                <input id="pd-qty2" placeholder="16 MT" autocomplete="off">
+              </label>
+              <button class="btn btn--primary pd-wide" type="button" id="pd-ask">Request today's price</button>
+              <p class="pd-err" id="pd-err4" role="alert"></p>
+            </div>
+            <p class="pd-done" id="pd-done" hidden>Thank you. We confirm within one working hour.</p>
+          </div>
+        </div>
+      </div>
+
+      <style>
+      .pd{border:1px solid var(--line);border-radius:22px;background:var(--surface-1);padding:clamp(20px,3vw,30px);margin-top:26px}
+      .pd__head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
+      .pd__eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+      .pd__eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue)}
+      .pd__title{margin:10px 0 0;font-size:clamp(20px,3vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--text)}
+      .pd__badge{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:6px 12px;white-space:nowrap}
+      .pd__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 20px;margin:0 0 22px}
+      .pd__facts div{display:flex;flex-direction:column;gap:5px;min-width:0}
+      .pd__facts dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+      .pd__facts dd{margin:0;font-size:14px;color:var(--text);line-height:1.4}
+      .pd__actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+      .pd__note{margin:0;font-size:13px;color:var(--muted)}
+      .pd-modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px}
+      .pd-modal[hidden]{display:none}
+      .pd-modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
+      .pd-modal__panel{position:relative;width:min(440px,100%);max-height:92vh;overflow:auto;background:var(--surface-1);border:1px solid var(--line-2);border-radius:22px;padding:26px 24px 24px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+      .pd-modal__x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:24px;line-height:1;cursor:pointer}
+      .pd-modal__x:hover{background:rgba(255,255,255,.06);color:var(--text)}
+      .pd-step h4{margin:0 0 8px;font-size:21px;font-weight:600;letter-spacing:-.01em;color:var(--text)}
+      .pd-step__lead{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--muted)}
+      .pd-step__lead b{color:var(--text);font-weight:600}
+      .pd-field{display:block;margin-bottom:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+      .pd-field span{text-transform:none;letter-spacing:0;font-size:11px}
+      .pd-field input{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid var(--line-2);border-radius:12px;background:var(--surface-2);color:var(--text);font:inherit;font-size:16px;text-transform:none;letter-spacing:0}
+      .pd-field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(41,151,255,.18)}
+      #pd-code{font-family:var(--mono);font-size:24px;letter-spacing:.4em;text-align:center}
+      .pd-wide{width:100%;justify-content:center}
+      .pd-link{display:block;margin:14px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+      .pd-link:hover{color:var(--text)}
+      .pd-err{min-height:16px;margin:12px 0 0;font-size:13px;color:#FF6B6B}
+      .pd-price{margin:6px 0 6px;font-size:clamp(34px,8vw,44px);font-weight:600;letter-spacing:-.03em;color:var(--text)}
+      .pd-price small{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+      .pd-breaks{margin:0 0 16px;font-size:13px;color:var(--muted);line-height:1.6}
+      .pd-done{margin:16px 0 0;font-size:14px;color:var(--text);background:rgba(41,151,255,.1);border:1px solid rgba(41,151,255,.28);border-radius:12px;padding:14px 16px}
+      @media (max-width:640px){
+        .pd__facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+        .pd-modal{padding:10px;align-items:flex-end}
+        .pd-modal__panel{width:100%;border-radius:20px 20px 16px 16px;padding:24px 18px}
+      }
+      @media (max-width:360px){.pd__facts{grid-template-columns:1fr}}
+      </style>
+
+      <script>
+      (function(){
+        var SB = 'https://viqlbbdietthidicsvne.supabase.co';
+        var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpcWxiYmRpZXR0aGlkaWNzdm5lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIzNDk4MzYsImV4cCI6MjEwNzkyNTgzNn0.EyeAqalVJO7sdp0voYAS7NH50ahebJ5H1pWcVX1sih8';
+        var $ = function(id){ return document.getElementById(id); };
+        var state = { priceId:null, email:null, whatsapp:'', access:null, row:null };
+
+        function api(path, opts){
+          opts = opts || {};
+          var headers = Object.assign({'apikey':KEY,'Content-Type':'application/json'}, opts.headers||{});
+          if (state.access) headers['Authorization'] = 'Bearer ' + state.access;
+          else headers['Authorization'] = 'Bearer ' + KEY;
+          return fetch(SB + path, Object.assign({}, opts, {headers:headers})).then(function(r){
+            return r.text().then(function(t){
+              var d = null; try { d = t ? JSON.parse(t) : null; } catch(e) { d = t; }
+              if (!r.ok) { var err = new Error((d && (d.message || d.msg || d.error_description)) || ('HTTP ' + r.status)); err.status = r.status; err.data = d; throw err; }
+              return d;
+            });
+          });
+        }
+
+        function fmtDate(iso){
+          if (!iso) return '—';
+          var d = new Date(iso + 'T00:00:00');
+          return d.toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+        }
+
+        function loadPublic(){
+          return api('/rest/v1/public_prices?select=*&order=confirmed_on.desc&limit=1').then(function(rows){
+            if (!rows || !rows.length) return;
+            state.row = rows[0];
+            state.priceId = rows[0].id;
+            var band = (rows[0].band_low && rows[0].band_high)
+              ? ('From USD ' + Number(rows[0].band_low).toLocaleString('en-US') + '–' + Number(rows[0].band_high).toLocaleString('en-US') + ' / MT')
+              : 'Price on request';
+            $('pd-band').textContent = band;
+            $('pd-date').textContent = fmtDate(rows[0].confirmed_on);
+            var badge = $('pd-badge');
+            if (rows[0].status === 'live') { badge.textContent = 'Live today'; badge.hidden = false; }
+            else { badge.textContent = 'Confirmed ' + fmtDate(rows[0].confirmed_on); badge.hidden = false; }
+          }).catch(function(){
+            $('pd-band').textContent = 'Price on request';
+            $('pd-date').textContent = 'Ask us';
+          });
+        }
+
+        function show(step){
+          Array.prototype.forEach.call(document.querySelectorAll('.pd-step'), function(s){
+            s.hidden = s.getAttribute('data-step') !== step;
+          });
+          var f = document.querySelector('.pd-step[data-step="' + step + '"] input');
+          if (f) setTimeout(function(){ f.focus(); }, 60);
+        }
+        function openModal(){
+          $('pd-modal').hidden = false;
+          document.documentElement.style.overflow = 'hidden';
+          if (state.access) { openPrice().catch(function(){ show('email'); }); } else { show('email'); }
+        }
+        function closeModal(){
+          $('pd-modal').hidden = true;
+          document.documentElement.style.overflow = '';
+        }
+
+        function requestCode(){
+          var email = ($('pd-email').value || '').trim().toLowerCase();
+          var wa = ($('pd-wa').value || '').trim();
+          $('pd-err1').textContent = '';
+          if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) { $('pd-err1').textContent = 'Enter a valid email address.'; return; }
+          var btn = $('pd-send'); btn.disabled = true; btn.textContent = 'Sending…';
+          state.email = email; state.whatsapp = wa;
+          api('/rest/v1/code_requests', {method:'POST', headers:{'Prefer':'return=minimal'}, body:JSON.stringify({email:email})})
+            .then(function(){
+              $('pd-who').textContent = email;
+              show('code');
+            })
+            .catch(function(e){
+              var msg = (e && e.message) || '';
+              if (/rate_limited_email/.test(msg)) $('pd-err1').textContent = 'A code was just sent to this address. Wait two minutes, or check your inbox.';
+              else if (/rate_limited_global/.test(msg)) $('pd-err1').textContent = 'Too many codes requested right now. Try again in a few minutes, or WhatsApp us.';
+              else $('pd-err1').textContent = 'We could not send the code. Try again, or WhatsApp us.';
+            })
+            .then(function(){ btn.disabled = false; btn.textContent = 'Email me the code'; });
+        }
+
+        function verify(){
+          var code = ($('pd-code').value || '').replace(/\D/g,'');
+          $('pd-err2').textContent = '';
+          if (code.length !== 6) { $('pd-err2').textContent = 'The code is 6 digits.'; return; }
+          var btn = $('pd-verify'); btn.disabled = true; btn.textContent = 'Checking…';
+          api('/auth/v1/verify', {method:'POST', body:JSON.stringify({type:'email', email:state.email, token:code})})
+            .then(function(session){
+              state.access = session.access_token;
+              try { sessionStorage.setItem('pd_session', JSON.stringify({t:session.access_token, e:state.email, x:Date.now()+3300000})); } catch(e){}
+              return openPrice();
+            })
+            .catch(function(e){
+              $('pd-err2').textContent = 'That code is wrong or has expired. Ask for a new one.';
+            })
+            .then(function(){ btn.disabled = false; btn.textContent = 'Open the price'; });
+        }
+
+        function openPrice(){
+          return api('/rest/v1/buyer_prices?select=*&limit=1').then(function(rows){
+            show('price');
+            $('pd-done').hidden = true;
+            if (rows && rows.length) {
+              var p = rows[0];
+              state.live = p;
+              $('pd-live').hidden = false;
+              $('pd-request').hidden = true;
+              $('pd-price').textContent = 'USD ' + Number(p.sell_price_usd_mt).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+              var meta = 'FOB ' + (p.port || 'Mundra') + ' · per MT · valid until ' + fmtDate(p.valid_until);
+              $('pd-price-meta').textContent = meta;
+              var br = p.qty_breaks || [];
+              $('pd-breaks').textContent = Array.isArray(br) && br.length
+                ? br.map(function(b){ return (b.qty || b.quantity || '') + ': ' + (b.price ? ('USD ' + Number(b.price).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' / MT') : ''); }).join(' · ')
+                : '';
+              $('pd-breaks').hidden = !(Array.isArray(br) && br.length);
+            } else {
+              state.live = null;
+              $('pd-live').hidden = true;
+              $('pd-request').hidden = false;
+            }
+          });
+        }
+
+        function finishLead(kind){
+          var qty = (kind === 'lock' ? $('pd-qty').value : $('pd-qty2').value || '').trim() || '16 MT';
+          var errEl = kind === 'lock' ? $('pd-err3') : $('pd-err4');
+          var btn = kind === 'lock' ? $('pd-lock') : $('pd-ask');
+          errEl.textContent = '';
+          btn.disabled = true;
+          var rpc = kind === 'lock' ? 'lock_price' : 'request_price';
+          var price = kind === 'lock' && state.live ? Number(state.live.sell_price_usd_mt) : null;
+          api('/rest/v1/rpc/' + rpc, {method:'POST', body:JSON.stringify({p_price_id:state.priceId, p_quantity:qty, p_whatsapp:state.whatsapp || null})})
+            .then(function(){
+              var payload = {
+                product: 'Castor Oil FSG',
+                quantity: qty,
+                email: state.email,
+                whatsapp: state.whatsapp || '',
+                price: price ? ('USD ' + price.toFixed(2) + ' / MT') : 'price on request',
+                time: new Date().toISOString(),
+                source: 'se7.studio price desk'
+              };
+              return fetch('https://formsubmit.co/ajax/sandhuprague@gmail.com', {
+                method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+                body: JSON.stringify(payload)
+              }).catch(function(){ return null; });
+            })
+            .then(function(){
+              $('pd-live').hidden = true;
+              $('pd-request').hidden = true;
+              $('pd-done').hidden = false;
+            })
+            .catch(function(e){
+              errEl.textContent = 'We could not record that. Try again, or WhatsApp us.';
+            })
+            .then(function(){ btn.disabled = false; });
+        }
+
+        function boot(){
+          loadPublic();
+          $('pd-open').addEventListener('click', openModal);
+          Array.prototype.forEach.call(document.querySelectorAll('[data-pd-close]'), function(el){ el.addEventListener('click', closeModal); });
+          document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !$('pd-modal').hidden) closeModal(); });
+          $('pd-send').addEventListener('click', requestCode);
+          $('pd-email').addEventListener('keydown', function(e){ if (e.key === 'Enter') requestCode(); });
+          $('pd-verify').addEventListener('click', verify);
+          $('pd-code').addEventListener('keydown', function(e){ if (e.key === 'Enter') verify(); });
+          $('pd-resend').addEventListener('click', function(){ show('email'); requestCode(); });
+          $('pd-lock').addEventListener('click', function(){ finishLead('lock'); });
+          $('pd-ask').addEventListener('click', function(){ finishLead('request'); });
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+      })();
+      </script>
 
       <div class="ship reveal" id="spec">
         <div class="ship__head">
