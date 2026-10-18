@@ -189,7 +189,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     radial-gradient(46% 44% at 50% 76%,rgba(41,151,255,.15),transparent 72%);
 }
 .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#000 100%)}
-.hero__kicker,.hero__logo,.hero__tagline,.hero__actions,.hero__art,.scrollcue{position:relative;z-index:2}
+.hero__kicker,.hero__logo,.hero__tagline,.hero__sub,.hero__actions,.hero__art,.scrollcue{position:relative;z-index:2}
 .hero__kicker{
   position:relative;z-index:2;
   font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
@@ -215,6 +215,15 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   font-size:clamp(11px,1.45vw,14px);font-weight:600;letter-spacing:.34em;text-transform:uppercase;
   color:rgba(245,245,247,.82);
   opacity:0;animation:fadeUp .9s var(--ease) .5s forwards;
+}
+.hero__sub{
+  position:relative;z-index:2;
+  margin:14px auto 0;
+  max-width:620px;
+  font-size:clamp(16px,1.5vw,17px);line-height:1.5;font-weight:400;letter-spacing:0;
+  text-align:center;text-transform:none;color:var(--muted);
+  padding:0 4px;
+  opacity:0;animation:fadeUp .9s var(--ease) .62s forwards;
 }
 .hero__actions{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;
@@ -641,7 +650,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;
   }
-  .hero__logo,.hero__tagline,.hero__actions,.hero__art{opacity:1}
+  .hero__logo,.hero__tagline,.hero__sub,.hero__actions,.hero__art{opacity:1}
   .js .reveal{opacity:1;transform:none}
   .statement__text .w{opacity:1}
   .route-pulse{display:none}
@@ -707,6 +716,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <span class="hero__kicker">Sandhu Exports</span>
     <h1 class="hero__logo"><span class="hero__logo-text">SE7</span><span class="hero__logo-square" aria-hidden="true"></span></h1>
     <p class="hero__tagline">We connect. Trust.</p>
+    <p class="hero__sub">Castor oil and castor derivatives, mill-direct from India.</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="#products">See the product</a>
       <a class="btn btn--ghost" href="#lines">See details
