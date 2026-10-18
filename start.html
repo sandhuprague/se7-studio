@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Send your details — SE7 | Sandhu Exports</title>
-<meta name="description" content="Tell SE7 what you need — the product, the volume and the destination. A mill-direct price back within a day. No fee to see a price.">
+<meta name="description" content="Tell SE7 what you need — the product, the volume and the destination. A mill-direct price back within one working day. No fee to see a price.">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self'">
@@ -229,6 +229,27 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
 .footer__links a:hover{color:var(--text)}
 .footer__base{max-width:var(--max);margin:22px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:rgba(134,134,139,.8)}
 
+/* ---------- quick quote ---------- */
+.quick{
+  position:relative;width:calc(100% - var(--pad) * 2);max-width:760px;
+  margin:clamp(26px,4.5vw,38px) auto 0;
+  padding:clamp(22px,3.6vw,32px);
+  background:linear-gradient(180deg,#1B1B1E 0%,var(--surface-1) 100%);
+  border:1px solid rgba(41,151,255,.3);border-radius:22px;
+  box-shadow:0 24px 70px rgba(0,0,0,.5),0 0 0 1px rgba(41,151,255,.05);
+}
+.quick__head{display:flex;align-items:baseline;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.quick__head h2{font-size:1.2rem;letter-spacing:-.02em;font-weight:600}
+.quick__head span{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.quick form{margin-top:18px;gap:16px}
+.quick__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.quick__foot{display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap}
+.quick__note{font-size:12px;line-height:1.5;color:var(--muted)}
+.quick .submit{padding:13px 26px;font-size:14.5px}
+.quick .sent h3{font-size:1.15rem}
+.more{max-width:760px;margin:clamp(30px,5vw,44px) auto 0;padding:0 var(--pad);text-align:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(134,134,139,.85)}
+.more + .panel{margin-top:16px}
+
 /* ---------- motion ---------- */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .js .intro .eyebrow,.js .intro h1,.js .intro__lead,.js .intro__meta,.js .panel,.js .direct,.js .next{animation:fadeUp .9s var(--ease) both}
@@ -243,6 +264,11 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   .intro{padding-top:118px}
   .intro h1{letter-spacing:-.035em}
   .panel{border-radius:18px;padding:22px 20px}
+  .quick{border-radius:18px;padding:22px 20px}
+  .quick__row{grid-template-columns:1fr;gap:16px}
+  .quick__foot{flex-direction:column;align-items:stretch;gap:12px}
+  .quick .submit{width:100%}
+  .quick__note{order:2;text-align:center}
   form{gap:20px;margin-top:24px}
   .form__row{grid-template-columns:1fr;gap:16px}
   .role__grid{grid-template-columns:1fr}
@@ -287,12 +313,45 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   <section class="intro">
     <span class="eyebrow">Sourcing inquiry</span>
     <h1>Tell us what you need.</h1>
-    <p class="intro__lead">The product, the volume, the destination. We come back with a mill-direct price within a day.</p>
+    <p class="intro__lead">The product, the volume, the destination. We come back with a mill-direct price within one working day.</p>
     <div class="intro__meta">
       <span class="dot" aria-hidden="true"></span><span>No fee to see a price</span>
-      <span class="sep" aria-hidden="true"></span><span>Reply within a day</span>
+      <span class="sep" aria-hidden="true"></span><span>Reply within one working day</span>
     </div>
   </section>
+
+  <section class="quick" aria-labelledby="quickTitle">
+    <div class="quick__head">
+      <h2 id="quickTitle">Quick quote</h2>
+      <span>3 fields</span>
+    </div>
+    <form action="https://formsubmit.co/ajax/sandhuprague@gmail.com" method="post" data-endpoint="https://formsubmit.co/ajax/sandhuprague@gmail.com" id="quickForm">
+      <input type="text" name="_honey" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source_page" id="quickSource" value="">
+      <input type="hidden" name="tap_time" id="quickTap" value="">
+      <div class="quick__row">
+        <div class="field">
+          <label for="quickName">Your name <span class="req">*</span></label>
+          <input type="text" id="quickName" name="name" required autocomplete="name" placeholder="e.g. Arun Sandhu">
+        </div>
+        <div class="field">
+          <label for="quickContact">Email or WhatsApp <span class="req">*</span></label>
+          <input type="text" id="quickContact" name="contact" required autocomplete="email" placeholder="name@company.com or +420 …">
+        </div>
+      </div>
+      <div class="field">
+        <label for="quickProduct">Product and quantity <span class="req">*</span></label>
+        <input type="text" id="quickProduct" name="product_quantity" required placeholder="e.g. Castor oil FSG, 1 × 20-ft">
+      </div>
+      <div class="quick__foot">
+        <button type="submit" class="submit">Get my price</button>
+        <p class="quick__note">No fee to see a price. We reply within one working day.</p>
+      </div>
+      <p class="form__status" id="quickStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <p class="more">Want to add company, destination and notes? Use the full form.</p>
 
   <section class="panel" aria-labelledby="detailsTitle">
     <div class="panel__head">
@@ -367,7 +426,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
       </div>
 
       <div class="form__foot">
-        <p class="form__note"><span class="dot" aria-hidden="true"></span><span><strong>No fee to see a price.</strong> We reply within a day.</span></p>
+        <p class="form__note"><span class="dot" aria-hidden="true"></span><span><strong>No fee to see a price.</strong> We reply within one working day.</span></p>
         <button type="submit" class="submit">Send my details</button>
       </div>
       <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
@@ -425,6 +484,77 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  /* ---- quick quote ---- */
+  var quick = document.getElementById('quickForm');
+  if (quick) {
+    var quickStatus = document.getElementById('quickStatus');
+    var quickButton = quick.querySelector('.submit');
+    var quickSource = document.getElementById('quickSource');
+    var quickTap = document.getElementById('quickTap');
+    var tapRecorded = false;
+
+    function stampTap() {
+      if (quickTap) quickTap.value = new Date().toISOString();
+    }
+
+    if (quickSource) {
+      var src = window.location.pathname + (window.location.search || '');
+      if (document.referrer) src += ' | from ' + document.referrer;
+      quickSource.value = src;
+    }
+    stampTap();
+    Array.prototype.forEach.call(quick.querySelectorAll('input, textarea'), function (el) {
+      el.addEventListener('focus', function () {
+        if (!tapRecorded) { tapRecorded = true; stampTap(); }
+      }, { once: true });
+    });
+
+    quick.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var honey = quick.querySelector('input[name="_honey"]');
+      if (honey && honey.value !== '') return;
+
+      var data = new FormData(quick);
+      var product = String(data.get('product_quantity') || '');
+      var contact = String(data.get('contact') || '');
+      data.set('_subject', 'SITE - quick - ' + product.slice(0, 60));
+      if (contact.indexOf('@') > -1) data.set('_replyto', contact);
+      data.set('_honey', '');
+      data.set('source_page', quickSource ? quickSource.value : '');
+      data.set('tap_time', quickTap ? quickTap.value : '');
+
+      if (quickButton) {
+        quickButton.disabled = true;
+        quickButton.textContent = 'Sending…';
+      }
+      if (quickStatus) {
+        quickStatus.textContent = '';
+        quickStatus.classList.remove('is-error');
+      }
+
+      fetch(quick.getAttribute('data-endpoint'), { method: 'POST', body: data })
+        .then(function (r) { if (!r.ok) throw new Error('relay'); return r; })
+        .then(function () {
+          quick.innerHTML = '<div class="sent" role="status">' +
+            '<span class="sent__dot" aria-hidden="true"></span>' +
+            '<h3>Received. We reply within one working day.</h3>' +
+            '<a class="btn-ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
+            '</div>';
+        })
+        .catch(function () {
+          if (quickButton) {
+            quickButton.disabled = false;
+            quickButton.textContent = 'Get my price';
+          }
+          if (quickStatus) {
+            quickStatus.textContent = 'Could not send — please email hello@se7.studio or use WhatsApp.';
+            quickStatus.classList.add('is-error');
+          }
+        });
+    });
+  }
+
   var form = document.getElementById('detailsForm');
   if (!form) return;
 
@@ -457,7 +587,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
         form.innerHTML = '<div class="sent" role="status">' +
           '<span class="sent__dot" aria-hidden="true"></span>' +
           '<h3>Received.</h3>' +
-          '<p>We reply within a day. If it is urgent, message us on WhatsApp.</p>' +
+          '<p>We reply within one working day. If it is urgent, message us on WhatsApp.</p>' +
           '<a class="btn-ghost" href="https://wa.me/420792487976" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
           '</div>';
       })
