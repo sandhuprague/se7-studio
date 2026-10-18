@@ -189,12 +189,15 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     radial-gradient(46% 44% at 50% 76%,rgba(41,151,255,.15),transparent 72%);
 }
 .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#000 100%)}
-.hero__photo{
-  position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;
-  object-fit:cover;object-position:center;opacity:.16;z-index:1;
+.hero__photo-wrap{
+  position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;z-index:1;
   pointer-events:none;user-select:none;
   -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 38%,rgba(0,0,0,.65) 72%,transparent 100%);
   mask-image:linear-gradient(180deg,transparent 0%,#000 38%,rgba(0,0,0,.65) 72%,transparent 100%);
+}
+.hero__photo{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  opacity:.16;display:block;
 }
 .hero__kicker,.hero__logo,.hero__tagline,.hero__sub,.hero__proof,.hero__actions,.hero__art,.scrollcue{position:relative;z-index:2}
 .hero__kicker{
@@ -853,7 +856,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero__bg" aria-hidden="true"></div>
-    <img class="hero__photo" src="media/hero-proof.webp?v=p1b" alt="Studio visualisation of castor oil drums on a loading floor" width="1200" height="675" loading="lazy" decoding="async" fetchpriority="low">
+    <div class="hero__photo-wrap"><img class="hero__photo" src="media/hero-proof.webp?v=p1b" alt="Studio visualisation of castor oil drums on a loading floor" width="1200" height="675" decoding="async" fetchpriority="low"></div>
     <span class="hero__kicker">Sandhu Exports</span>
     <h1 class="hero__logo"><span class="hero__logo-text">SE7</span><span class="hero__logo-square" aria-hidden="true"></span></h1>
     <p class="hero__tagline">We connect. Trust.</p>
