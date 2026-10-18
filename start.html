@@ -205,6 +205,9 @@ form{display:flex;flex-direction:column;gap:24px;margin-top:28px}
   padding:22px 2px 0;border-top:1px solid var(--line);
   font-size:12.5px;color:var(--muted);
 }
+.direct__person{display:flex;flex-direction:column;gap:3px;line-height:1.35}
+.direct__person strong{font-size:14px;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.direct__person span{font-size:12.5px;color:var(--muted)}
 .direct__links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .direct__links a{color:rgba(245,245,247,.86);transition:color .2s ease}
 .direct__links a:hover{color:var(--blue)}
@@ -243,6 +246,8 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
 .quick__head span{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
 .quick form{margin-top:18px;gap:16px}
 .quick__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.quick__row--3{grid-template-columns:repeat(3,1fr)}
+.opt{font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--muted);font-size:10px;margin-left:4px}
 .quick__foot{display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap}
 .quick__note{font-size:12px;line-height:1.5;color:var(--muted)}
 .quick .submit{padding:13px 26px;font-size:14.5px}
@@ -334,7 +339,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   <section class="quick" aria-labelledby="quickTitle">
     <div class="quick__head">
       <h2 id="quickTitle">Quick quote</h2>
-      <span>3 fields</span>
+      <span>3 fields · 3 optional</span>
     </div>
     <form action="https://formsubmit.co/ajax/sandhuprague@gmail.com" method="post" data-endpoint="https://formsubmit.co/ajax/sandhuprague@gmail.com" id="quickForm">
       <input type="text" name="_honey" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -351,8 +356,22 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
         </div>
       </div>
       <div class="field">
-        <label for="quickProduct">Product and quantity <span class="req">*</span></label>
-        <input type="text" id="quickProduct" name="product_quantity" required placeholder="e.g. Castor oil FSG, 1 × 20-ft">
+        <label for="quickProduct">Product <span class="req">*</span></label>
+        <input type="text" id="quickProduct" name="product" required placeholder="e.g. Castor oil FSG">
+      </div>
+      <div class="quick__row quick__row--3">
+        <div class="field">
+          <label for="quickGrade">Grade <span class="opt">optional</span></label>
+          <input type="text" id="quickGrade" name="grade" placeholder="e.g. FSG BSS-75">
+        </div>
+        <div class="field">
+          <label for="quickQty">Quantity <span class="opt">optional</span></label>
+          <input type="text" id="quickQty" name="quantity" placeholder="e.g. 16 MT / 1 × 20-ft">
+        </div>
+        <div class="field">
+          <label for="quickPort">Port <span class="opt">optional</span></label>
+          <input type="text" id="quickPort" name="port" placeholder="e.g. Rotterdam">
+        </div>
       </div>
       <div class="quick__foot">
         <button type="submit" class="submit">Get my price</button>
@@ -447,7 +466,10 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   </section>
 
   <section class="direct" aria-label="Direct contact">
-    <span>Prefer directly?</span>
+    <div class="direct__person">
+      <strong>Aryan Sandhu</strong>
+      <span>Prague · SE7 export desk</span>
+    </div>
     <div class="direct__links">
       <a href="mailto:hello@se7.studio">hello@se7.studio</a>
       <a href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20Castor%20Oil%20FSG.%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -534,7 +556,7 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
       if (honey && honey.value !== '') return;
 
       var data = new FormData(quick);
-      var product = String(data.get('product_quantity') || '');
+      var product = String(data.get('product') || data.get('product_quantity') || '');
       var contact = String(data.get('contact') || '');
       data.set('_subject', 'SITE - quick - ' + product.slice(0, 60));
       if (contact.indexOf('@') > -1) data.set('_replyto', contact);
