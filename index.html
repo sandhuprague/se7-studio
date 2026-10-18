@@ -1244,6 +1244,10 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
         }
 
         function boot(){
+          try {
+            var saved = JSON.parse(sessionStorage.getItem('pd_session') || 'null');
+            if (saved && saved.t && saved.x > Date.now()) { state.access = saved.t; state.email = saved.e; }
+          } catch(e) {}
           loadPublic();
           $('pd-open').addEventListener('click', openModal);
           Array.prototype.forEach.call(document.querySelectorAll('[data-pd-close]'), function(el){ el.addEventListener('click', closeModal); });
