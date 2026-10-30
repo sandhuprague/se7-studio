@@ -522,6 +522,15 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  /* ---- shelf link: start.html?product=<name> prefills both forms ---- */
+  var wanted = new URLSearchParams(window.location.search).get('product');
+  if (wanted) {
+    ['quickProduct', 'productSpec'].forEach(function (id) {
+      var field = document.getElementById(id);
+      if (field && field.value === '') field.value = wanted;
+    });
+  }
+
   /* ---- quick quote ---- */
   var quick = document.getElementById('quickForm');
   if (quick) {
