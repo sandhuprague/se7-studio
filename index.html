@@ -234,6 +234,18 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   padding:0 4px;
   opacity:0;animation:fadeUp .9s var(--ease) .62s forwards;
 }
+
+/* hero product range — first screen must say what we sell */
+.hero__shelf{
+  position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;
+  margin:22px auto 0;max-width:760px;text-align:left;
+  opacity:0;animation:fadeUp .9s var(--ease) .68s forwards;
+}
+.hero__shelf-col{min-width:210px}
+.hero__shelf-label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.hero__shelf-names{font-size:14.5px;line-height:1.5;color:var(--text)}
+.hero__shelf-names i{font-style:normal;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);vertical-align:1px;margin-left:2px}
+@media(max-width:560px){.hero__shelf{gap:12px 24px;justify-content:flex-start}.hero__shelf-col{min-width:0}}
 .hero__proof{
   position:relative;z-index:2;
   margin:15px auto 0;max-width:700px;padding:0 8px;
@@ -865,7 +877,16 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <div class="hero__logo"><span class="hero__logo-text">SE7</span><span class="hero__logo-square" aria-hidden="true"></span></div>
     <p class="hero__tagline">We connect. Trust.</p>
     <h1 class="hero__sub">We source from India. You send the product, we find the factory.</h1>
-    <p class="hero__proof"><strong>One live grade</strong> · Three derivatives quoted on request · Factories checked before a name is shared</p>
+    <div class="hero__shelf">
+      <div class="hero__shelf-col">
+        <span class="hero__shelf-label">Oils</span>
+        <span class="hero__shelf-names">Castor Oil FSG <i>live</i> · Essential oils</span>
+      </div>
+      <div class="hero__shelf-col">
+        <span class="hero__shelf-label">Derivatives</span>
+        <span class="hero__shelf-names">12-HSA <i>quoted</i> · Sebacic acid · DCO</span>
+      </div>
+    </div>
     <div class="hero__actions">
       <a class="btn btn--primary" href="start.html?v=p1b2">Get a price</a>
       <a class="btn btn--ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20my%20product.%20Product%3A%20...%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener">WhatsApp
@@ -902,13 +923,68 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <p>Castor oil FSG live · 12-HSA quoted · Sebacic acid and DCO on request · India to Europe and the Gulf. <a href="#spec">See the products</a></p>
   </div>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <div class="ticker__set"><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i></div>
-      <div class="ticker__set"><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Castor oil FSG</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i></div>
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <div class="wrap">
+      <div class="section-head" id="spec" style="scroll-margin-top:90px">
+        <div>
+          <span class="eyebrow reveal">Products</span>
+          <h2 class="reveal">What we source</h2>
+        </div>
+        <p class="reveal">Oils and their derivatives, mill-direct from Indian factories. One grade is live today; the rest are quoted on request.</p>
+      </div>
+
+      <p class="ship__group">Oils</p>
+      <div class="bento" data-stagger>
+        <article class="card card--7 reveal">
+          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Live</span></div>
+          <h3>Castor Oil FSG</h3>
+          <p>First Special Grade, BSS-75. 200 kg HDPE drums on pallets, 16 MT net per 20-ft. FOB Mundra.</p>
+          <a class="card__link" href="start.html?product=Castor%20Oil%20FSG">Ask for this line</a>
+        </article>
+
+        <article class="card card--5 reveal">
+          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
+          <h3>Essential oils</h3>
+          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
+          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
+        </article>
+      </div>
+
+      <p class="ship__group">Derivatives</p>
+      <div class="bento" data-stagger>
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Quoted</span></div>
+          <h3>12-HSA</h3>
+          <p>12-hydroxystearic acid, flakes or powder. 25 kg bags, or 25/50 kg PP or paper bags. First order 1 &times; 20-ft.</p>
+          <a class="card__link" href="start.html?product=12-HSA">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">On request</span></div>
+          <h3>Sebacic acid</h3>
+          <p>Castor-derived. Purity, moisture and physical form are confirmed in the quote, with packing and port.</p>
+          <a class="card__link" href="start.html?product=Sebacic%20acid">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">On request</span></div>
+          <h3>DCO</h3>
+          <p>Dehydrated castor oil. Drums or liquid bulk, grade and acid value confirmed at quote.</p>
+          <a class="card__link" href="start.html?product=DCO">Ask for this line</a>
+        </article>
+      </div>
+
+      <div class="bento ship__shelf" data-stagger>
+        <article class="card card--12 reveal">
+          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Outside the list</span></div>
+          <h3>Not on the shelf? Send it anyway.</h3>
+          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
+          <a class="card__link" href="start.html">Send your product</a>
+        </article>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- STATEMENT -->
   <section class="statement" id="studio">
@@ -924,112 +1000,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   </section>
 
 
-  <!-- PRODUCT -->
-  <section class="section" id="products">
-    <div class="wrap">
-      <div class="section-head" id="spec" style="scroll-margin-top:90px">
-        <div>
-          <span class="eyebrow reveal">Products</span>
-          <h2 class="reveal">What we source</h2>
-        </div>
-        <p class="reveal">Castor oil and its derivatives, mill-direct from Indian factories. FSG is live today; 12-HSA is quoted on request; sebacic acid and DCO are quoted when a mill prices your grade.</p>
-      </div>
 
-      <p class="ship__group">Oils</p>
-      <div class="bento" data-stagger>
-        <article class="card card--7 reveal">
-          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Live</span></div>
-          <h3>Castor Oil FSG</h3>
-          <p>First Special Grade, BSS-75. 200 kg HDPE drums on pallets, 16 MT net per 20-ft. FOB Mundra, with the supplier COA for the lot.</p>
-          <a class="card__link" href="start.html?product=Castor%20Oil%20FSG">Ask for this line</a>
-        </article>
-      </div>
-
-      <p class="ship__group">Derivatives</p>
-      <div class="bento" data-stagger>
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Quoted</span></div>
-          <h3>12-HSA</h3>
-          <p>12-hydroxystearic acid, flakes or powder. 25 kg bags, or 25/50 kg PP or paper bags. First order 1 &times; 20-ft.</p>
-          <a class="card__link" href="start.html?product=12-HSA">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">On request</span></div>
-          <h3>Sebacic acid</h3>
-          <p>Castor-derived. Purity, moisture and physical form are confirmed in the quote, with packing and port.</p>
-          <a class="card__link" href="start.html?product=Sebacic%20acid">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">On request</span></div>
-          <h3>DCO</h3>
-          <p>Dehydrated castor oil. Drums or liquid bulk, grade and acid value confirmed at quote.</p>
-          <a class="card__link" href="start.html?product=DCO">Ask for this line</a>
-        </article>
-      </div>
-
-      <p class="ship__group">Sourcing lines</p>
-      <div class="bento" data-stagger>
-<article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">Sourcing</span></div>
-          <h3>Leather small goods</h3>
-          <p>Wallets, purses and card holders. HS 420231. For leather wholesalers, gift brands and department-store suppliers.</p>
-          <a class="card__link" href="start.html?product=Leather%20small%20goods">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Sourcing</span></div>
-          <h3>Cotton towels and bed linen</h3>
-          <p>Towels, bathrobes and hotel linen. HS 630260 and 630221. For hotel groups, spa suppliers and home-textile wholesalers.</p>
-          <a class="card__link" href="start.html?product=Cotton%20towels%20and%20bed%20linen">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">07</span><span class="card__tag">Sourcing</span></div>
-          <h3>Valve and tap parts</h3>
-          <p>Bodies, stems and cartridges. HS 848190. For valve makers and industrial distributors.</p>
-          <a class="card__link" href="start.html?product=Valve%20and%20tap%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">08</span><span class="card__tag">Sourcing</span></div>
-          <h3>Essential oils</h3>
-          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
-          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">09</span><span class="card__tag">Sourcing</span></div>
-          <h3>Metal caps and closures</h3>
-          <p>Aluminium ROPP, crown and lug caps. HS 8309. For distilleries, food fillers, cosmetics and pharma.</p>
-          <a class="card__link" href="start.html?product=Metal%20caps%20and%20closures">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">10</span><span class="card__tag">Sourcing</span></div>
-          <h3>Forged steel parts</h3>
-          <p>Forged and machined components. HS 732619. For machine builders and hardware distributors.</p>
-          <a class="card__link" href="start.html?product=Forged%20steel%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--5 reveal">
-          <div class="card__top"><span class="card__idx">11</span><span class="card__tag">Sourcing</span></div>
-          <h3>Stainless kitchenware</h3>
-          <p>Cookware and serving ware. HS 732393. For houseware wholesalers and retail suppliers.</p>
-          <a class="card__link" href="start.html?product=Stainless%20kitchenware">Ask for this line</a>
-        </article>
-
-        <article class="card card--7 reveal">
-          <div class="card__top"><span class="card__idx">12</span><span class="card__tag">Outside the list</span></div>
-          <h3>Not on the shelf? Send it anyway.</h3>
-          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
-          <a class="card__link" href="start.html">Send your product</a>
-        </article>
-      </div>
-
-    </div>
-  </section>
 
   <!-- THE DESK / BENTO -->
   <section class="section" id="capabilities">
