@@ -11,7 +11,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SE7 — We connect. Trust. | Sandhu Exports">
-<meta property="og:description" content="Verified manufacturers in India. Buyers in Europe and the Gulf. One live line, seven open sourcing lines, one desk in Prague.">
+<meta property="og:description" content="Verified manufacturers in India. Buyers in Europe and the Gulf. Castor oil and its derivatives, one desk in Prague.">
 <meta property="og:url" content="https://se7.studio/">
 <link rel="canonical" href="https://se7.studio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='41' font-family='-apple-system,Helvetica,Arial' font-size='21' font-weight='700' fill='%23F5F5F7' text-anchor='middle'%3ESE7%3C/text%3E%3C/svg%3E">
@@ -234,6 +234,18 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   padding:0 4px;
   opacity:0;animation:fadeUp .9s var(--ease) .62s forwards;
 }
+
+/* hero product range — first screen must say what we sell */
+.hero__shelf{
+  position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;
+  margin:22px auto 0;max-width:760px;text-align:left;
+  opacity:0;animation:fadeUp .9s var(--ease) .68s forwards;
+}
+.hero__shelf-col{min-width:210px}
+.hero__shelf-label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.hero__shelf-names{font-size:14.5px;line-height:1.5;color:var(--text)}
+.hero__shelf-names i{font-style:normal;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);vertical-align:1px;margin-left:2px}
+@media(max-width:560px){.hero__shelf{gap:12px 24px;justify-content:flex-start}.hero__shelf-col{min-width:0}}
 .hero__proof{
   position:relative;z-index:2;
   margin:15px auto 0;max-width:700px;padding:0 8px;
@@ -469,6 +481,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .card:hover::before{opacity:1}
 .card>*{position:relative;z-index:1}
 .card--7{grid-column:span 7}
+.card--12{grid-column:span 12}
 .card--5{grid-column:span 5}
 .card__link{display:inline-block;align-self:flex-start;margin-top:auto;padding-top:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid rgba(41,151,255,.35);padding-bottom:2px;transition:border-color .2s}
 .card__link:hover{border-bottom-color:var(--blue)}
@@ -651,6 +664,11 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   border:1px solid var(--line-2);border-radius:99px;padding:4px 8px;white-space:nowrap;
 }
 .ship__tag.is-live{color:var(--blue);border-color:rgba(41,151,255,.4);background:rgba(41,151,255,.08)}
+.ship__group{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.ship__group::after{content:"";flex:1;height:1px;background:var(--line)}
+.ship__foot{margin:16px 0 0;font-size:13px;line-height:1.6;color:var(--muted)}
+.ship__shelf{margin-top:24px}
+.ship__foot a{color:var(--text);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .ship__docs{
   display:flex;align-items:flex-end;justify-content:space-between;gap:18px 24px;flex-wrap:wrap;
   margin-top:20px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.12);
@@ -809,7 +827,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   "alternateName": "SE7",
   "url": "https://se7.studio",
   "email": "hello@se7.studio",
-  "description": "The sourcing desk of Sandhu Exports, connecting verified manufacturers in India with buyers in Europe and the Gulf. One live line, seven sourcing lines open.",
+  "description": "The sourcing desk of Sandhu Exports, connecting verified manufacturers in India with buyers in Europe and the Gulf. Castor oil FSG is live; its three derivatives are quoted on request.",
   "areaServed": ["Europe", "Middle East", "Worldwide"],
   "address": {"@type": "PostalAddress", "addressLocality": "Prague", "addressCountry": "CZ"}
 }
@@ -827,9 +845,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <nav class="nav__links" aria-label="Primary">
       <a href="#studio">About</a>
       <a href="#products">Products</a>
-      <a href="#shelf">Shelf</a>
       <a href="#capabilities">The desk</a>
-      <a href="#lines">Lines</a>
       <a href="#approach">Approach</a>
     </nav>
     <div class="nav__actions">
@@ -846,9 +862,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   <nav aria-label="Mobile">
     <a href="#studio">About</a>
     <a href="#products">Products</a>
-    <a href="#shelf">Shelf</a>
     <a href="#capabilities">The desk</a>
-    <a href="#lines">Lines</a>
     <a href="#approach">Approach</a>
     <a href="start.html?v=p1b2">Send your details</a>
     <a class="menu__mail" href="mailto:hello@se7.studio">hello@se7.studio</a>
@@ -863,13 +877,22 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <div class="hero__logo"><span class="hero__logo-text">SE7</span><span class="hero__logo-square" aria-hidden="true"></span></div>
     <p class="hero__tagline">We connect. Trust.</p>
     <h1 class="hero__sub">We source from India. You send the product, we find the factory.</h1>
-    <p class="hero__proof"><strong>One live line</strong> · Seven sourcing lines open · Factories checked before a name is shared</p>
+    <div class="hero__shelf">
+      <div class="hero__shelf-col">
+        <span class="hero__shelf-label">Oils</span>
+        <span class="hero__shelf-names">Castor Oil FSG <i>live</i> · Essential oils</span>
+      </div>
+      <div class="hero__shelf-col">
+        <span class="hero__shelf-label">Derivatives</span>
+        <span class="hero__shelf-names">12-HSA <i>quoted</i> · Sebacic acid · DCO</span>
+      </div>
+    </div>
     <div class="hero__actions">
       <a class="btn btn--primary" href="start.html?v=p1b2">Get a price</a>
       <a class="btn btn--ghost" href="https://wa.me/420792487976?text=Hi%2C%20I%20want%20a%20price%20for%20my%20product.%20Product%3A%20...%20Quantity%3A%20...%20Destination%3A%20..." target="_blank" rel="noopener">WhatsApp
         <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a class="hero__spec" href="#spec">Spec sheet</a>
+      <a class="hero__spec" href="#spec">Product sheet</a>
     </div>
     <div class="hero__art" aria-hidden="true">
       <div class="hero__glow"></div>
@@ -897,20 +920,71 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 
   <!-- PROOF STRIP -->
   <div class="proof-strip">
-    <p>Castor oil live · Seven sourcing lines open · India to Europe and the Gulf · Supplier COA on request. <a href="#spec">See the live line</a></p>
+    <p>Castor oil FSG live · 12-HSA quoted · Sebacic acid and DCO on request · India to Europe and the Gulf. <a href="#spec">See the products</a></p>
   </div>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <div class="ticker__set">
-        <span>Castor oil</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Leather small goods</span><i></i><span>Towels &amp; bed linen</span><i></i><span>Valve &amp; tap parts</span><i></i><span>Essential oils</span><i></i><span>Metal caps</span><i></i><span>Forged steel</span><i></i><span>Stainless kitchenware</span><i></i><span>Psyllium husk</span><i></i><span>Guar gum</span><i></i><span>Cumin</span><i></i><span>Turmeric</span><i></i><span>Chilli</span><i></i><span>Darjeeling tea</span><i></i><span>Kashmiri saffron</span><i></i><span>Alphonso mango</span><i></i>
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <div class="wrap">
+      <div class="section-head" id="spec" style="scroll-margin-top:90px">
+        <div>
+          <span class="eyebrow reveal">Products</span>
+          <h2 class="reveal">What we source</h2>
+        </div>
+        <p class="reveal">Oils and their derivatives, mill-direct from Indian factories. One grade is live today; the rest are quoted on request.</p>
       </div>
-      <div class="ticker__set">
-        <span>Castor oil</span><i></i><span>12-HSA</span><i></i><span>Sebacic acid</span><i></i><span>DCO</span><i></i><span>Leather small goods</span><i></i><span>Towels &amp; bed linen</span><i></i><span>Valve &amp; tap parts</span><i></i><span>Essential oils</span><i></i><span>Metal caps</span><i></i><span>Forged steel</span><i></i><span>Stainless kitchenware</span><i></i><span>Psyllium husk</span><i></i><span>Guar gum</span><i></i><span>Cumin</span><i></i><span>Turmeric</span><i></i><span>Chilli</span><i></i><span>Darjeeling tea</span><i></i><span>Kashmiri saffron</span><i></i><span>Alphonso mango</span><i></i>
+
+      <p class="ship__group">Oils</p>
+      <div class="bento" data-stagger>
+        <article class="card card--7 reveal">
+          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Live</span></div>
+          <h3>Castor Oil FSG</h3>
+          <p>First Special Grade, BSS-75. 200 kg HDPE drums on pallets, 16 MT net per 20-ft. FOB Mundra.</p>
+          <a class="card__link" href="start.html?product=Castor%20Oil%20FSG">Ask for this line</a>
+        </article>
+
+        <article class="card card--5 reveal">
+          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
+          <h3>Essential oils</h3>
+          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
+          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
+        </article>
+      </div>
+
+      <p class="ship__group">Derivatives</p>
+      <div class="bento" data-stagger>
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Quoted</span></div>
+          <h3>12-HSA</h3>
+          <p>12-hydroxystearic acid, flakes or powder. 25 kg bags, or 25/50 kg PP or paper bags. First order 1 &times; 20-ft.</p>
+          <a class="card__link" href="start.html?product=12-HSA">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">On request</span></div>
+          <h3>Sebacic acid</h3>
+          <p>Castor-derived. Purity, moisture and physical form are confirmed in the quote, with packing and port.</p>
+          <a class="card__link" href="start.html?product=Sebacic%20acid">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">On request</span></div>
+          <h3>DCO</h3>
+          <p>Dehydrated castor oil. Drums or liquid bulk, grade and acid value confirmed at quote.</p>
+          <a class="card__link" href="start.html?product=DCO">Ask for this line</a>
+        </article>
+      </div>
+
+      <div class="bento ship__shelf" data-stagger>
+        <article class="card card--12 reveal">
+          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Outside the list</span></div>
+          <h3>Not on the shelf? Send it anyway.</h3>
+          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
+          <a class="card__link" href="start.html">Send your product</a>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- STATEMENT -->
   <section class="statement" id="studio">
@@ -925,542 +999,8 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     </div>
   </section>
 
-  <!-- PRODUCT -->
-  <section class="section" id="products">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow reveal">Products</span>
-          <h2 class="reveal">One live line. A shelf behind it.</h2>
-        </div>
-        <p class="reveal">Castor oil is the validated line, packed for industrial buyers. Behind it sits the shelf: seven more lines from Indian factories, each opened the same way.</p>
-      </div>
-
-      <div class="product reveal">
-        <div class="product__media">
-          <img src="proof-media/castor-beans.jpg" alt="Castor beans, the seed the oil is pressed from" width="1600" height="1070" loading="lazy" decoding="async">
-          <span class="product__tag">Castor seed · illustrative</span>
-        </div>
-        <div class="product__body">
-          <span class="product__kicker"><i></i>Live line · FSG</span>
-          <h3>Castor oil &amp; derivatives</h3>
-          <p class="product__lead">Castor oil FSG is live today. 12-HSA is quoted on request; sebacic acid and DCO are quoted when a mill prices your grade. Used by lubricant and grease makers, cosmetics, plastics, paints and resins, and pharmaceutical production.</p>
-          <dl class="specs">
-            <div><dt>FSG · live</dt><dd>200 kg HDPE drums · 16 MT / 20-ft · Mundra</dd></div>
-            <div><dt>12-HSA · quoted</dt><dd>25 kg bags · ~16 MT / 20-ft · Mundra</dd></div>
-            <div><dt>Sebacic acid</dt><dd>On request — packaging and terms in the quote</dd></div>
-            <div><dt>DCO</dt><dd>On request — drums or liquid bulk, in the quote</dd></div>
-            <div><dt>Pricing</dt><dd>No fee to see a price</dd></div>
-          </dl>
-          <div class="product__actions">
-            <a class="btn btn--primary" href="mailto:hello@se7.studio?subject=Castor%20oil%20price%20request">Request a price</a>
-            <a class="btn btn--ghost" href="#film">Watch the film
-              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRICE DESK -->
-      <div class="pd reveal" id="price-desk">
-        <div class="pd__head">
-          <div>
-            <span class="pd__eyebrow">Price desk</span>
-            <h3 class="pd__title">Castor Oil FSG — today's price</h3>
-          </div>
-          <span class="pd__badge" id="pd-badge" hidden></span>
-        </div>
-        <dl class="pd__facts">
-          <div><dt>Grade</dt><dd>FSG · BSS-75</dd></div>
-          <div><dt>Packing</dt><dd>200 kg HDPE drums on pallets</dd></div>
-          <div><dt>MOQ</dt><dd>16 MT net · 1 × 20-ft</dd></div>
-          <div><dt>Port</dt><dd>FOB Mundra</dd></div>
-          <div><dt>Indicative</dt><dd id="pd-band">Loading…</dd></div>
-          <div><dt>Last confirmed</dt><dd id="pd-date">—</dd></div>
-        </dl>
-        <div class="pd__actions">
-          <button class="btn btn--primary" type="button" id="pd-open">See today's exact price</button>
-          <p class="pd__note">No fee. One email code, valid 10 minutes.</p>
-        </div>
-      </div>
-
-      <div class="pd-modal" id="pd-modal" hidden>
-        <div class="pd-modal__backdrop" data-pd-close></div>
-        <div class="pd-modal__panel" role="dialog" aria-modal="true" aria-labelledby="pd-step-title">
-          <button class="pd-modal__x" type="button" data-pd-close aria-label="Close">&times;</button>
-
-          <div class="pd-step" data-step="email">
-            <h4 id="pd-step-title">Today's exact price</h4>
-            <p class="pd-step__lead">Enter your email and we send a 6-digit code. No account, no fee.</p>
-            <label class="pd-field">Email
-              <input type="email" id="pd-email" autocomplete="email" inputmode="email" placeholder="you@company.com" required>
-            </label>
-            <label class="pd-field">WhatsApp <span>(optional)</span>
-              <input type="tel" id="pd-wa" autocomplete="tel" inputmode="tel" placeholder="+420 …">
-            </label>
-            <button class="btn btn--primary pd-wide" type="button" id="pd-send">Email me the code</button>
-            <p class="pd-err" id="pd-err1" role="alert"></p>
-          </div>
-
-          <div class="pd-step" data-step="code" hidden>
-            <h4>Enter your code</h4>
-            <p class="pd-step__lead">We sent a 6-digit code to <b id="pd-who"></b>. It expires in 10 minutes.</p>
-            <label class="pd-field">Code
-              <input id="pd-code" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" placeholder="000000">
-            </label>
-            <button class="btn btn--primary pd-wide" type="button" id="pd-verify">Open the price</button>
-            <button class="pd-link" type="button" id="pd-resend">Send a new code</button>
-            <p class="pd-hint">Nothing after a minute? Check spam, or <a href="https://wa.me/420792487976?text=Hi%2C%20I%20need%20a%20price%20code%20for%20Castor%20Oil%20FSG" target="_blank" rel="noopener">WhatsApp us</a>.</p>
-            <p class="pd-err" id="pd-err2" role="alert"></p>
-          </div>
-
-          <div class="pd-step" data-step="price" hidden>
-            <div id="pd-live" hidden>
-              <h4>Your price</h4>
-              <p class="pd-price"><span id="pd-price">—</span> <small>USD / MT</small></p>
-              <p class="pd-step__lead" id="pd-price-meta"></p>
-              <div class="pd-breaks" id="pd-breaks"></div>
-              <label class="pd-field">Quantity
-                <input id="pd-qty" placeholder="16 MT" autocomplete="off">
-              </label>
-              <button class="btn btn--primary pd-wide" type="button" id="pd-lock">Lock this price</button>
-              <p class="pd-err" id="pd-err3" role="alert"></p>
-            </div>
-            <div id="pd-request" hidden>
-              <h4>Price on request</h4>
-              <p class="pd-step__lead" id="pd-request-note">The last confirmed price is older than 7 days, so we re-confirm with the mill before quoting.</p>
-              <label class="pd-field">Quantity
-                <input id="pd-qty2" placeholder="16 MT" autocomplete="off">
-              </label>
-              <button class="btn btn--primary pd-wide" type="button" id="pd-ask">Request today's price</button>
-              <p class="pd-err" id="pd-err4" role="alert"></p>
-            </div>
-            <p class="pd-done" id="pd-done" hidden>Thank you. We confirm within one working hour.</p>
-          </div>
-        </div>
-      </div>
-
-      <style>
-      .pd{border:1px solid var(--line);border-radius:22px;background:var(--surface-1);padding:clamp(20px,3vw,30px);margin-top:26px}
-      .pd__head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
-      .pd__eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-      .pd__eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue)}
-      .pd__title{margin:10px 0 0;font-size:clamp(20px,3vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--text)}
-      .pd__badge{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:6px 12px;white-space:nowrap}
-      .pd__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 20px;margin:0 0 22px}
-      .pd__facts div{display:flex;flex-direction:column;gap:5px;min-width:0}
-      .pd__facts dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-      .pd__facts dd{margin:0;font-size:14px;color:var(--text);line-height:1.4}
-      .pd__actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-      .pd__note{margin:0;font-size:13px;color:var(--muted)}
-      .pd-modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px}
-      .pd-modal[hidden]{display:none}
-      .pd-modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
-      .pd-modal__panel{position:relative;width:min(440px,100%);max-height:92vh;overflow:auto;background:var(--surface-1);border:1px solid var(--line-2);border-radius:22px;padding:26px 24px 24px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
-      .pd-modal__x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:24px;line-height:1;cursor:pointer}
-      .pd-modal__x:hover{background:rgba(255,255,255,.06);color:var(--text)}
-      .pd-step h4{margin:0 0 8px;font-size:21px;font-weight:600;letter-spacing:-.01em;color:var(--text)}
-      .pd-step__lead{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--muted)}
-      .pd-step__lead b{color:var(--text);font-weight:600}
-      .pd-field{display:block;margin-bottom:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-      .pd-field span{text-transform:none;letter-spacing:0;font-size:11px}
-      .pd-field input{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid var(--line-2);border-radius:12px;background:var(--surface-2);color:var(--text);font:inherit;font-size:16px;text-transform:none;letter-spacing:0}
-      .pd-field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(41,151,255,.18)}
-      #pd-code{font-family:var(--mono);font-size:24px;letter-spacing:.4em;text-align:center}
-      .pd-wide{width:100%;justify-content:center}
-      .pd-link{display:block;margin:14px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-      .pd-link:hover{color:var(--text)}
-      .pd-err{min-height:16px;margin:12px 0 0;font-size:13px;color:#FF6B6B}
-      .pd-hint{margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center}
-      .pd-hint a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-      .pd-price{margin:6px 0 6px;font-size:clamp(34px,8vw,44px);font-weight:600;letter-spacing:-.03em;color:var(--text)}
-      .pd-price small{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-      .pd-breaks{margin:0 0 16px;font-size:13px;color:var(--muted);line-height:1.6}
-      .pd-done{margin:16px 0 0;font-size:14px;color:var(--text);background:rgba(41,151,255,.1);border:1px solid rgba(41,151,255,.28);border-radius:12px;padding:14px 16px}
-      @media (max-width:640px){
-        .pd__head{flex-direction:column;gap:12px}
-        .pd__badge{align-self:flex-start}
-        .pd__facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-        .pd-modal{padding:10px;align-items:flex-end}
-        .pd-modal__panel{width:100%;border-radius:20px 20px 16px 16px;padding:24px 18px}
-      }
-      @media (max-width:360px){.pd__facts{grid-template-columns:1fr}}
-      </style>
-
-      <script>
-      (function(){
-        var SB = 'https://viqlbbdietthidicsvne.supabase.co';
-        var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpcWxiYmRpZXR0aGlkaWNzdm5lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIzNDk4MzYsImV4cCI6MjEwNzkyNTgzNn0.EyeAqalVJO7sdp0voYAS7NH50ahebJ5H1pWcVX1sih8';
-        var $ = function(id){ return document.getElementById(id); };
-        var state = { priceId:null, email:null, whatsapp:'', access:null, row:null };
-
-        function api(path, opts){
-          opts = opts || {};
-          var headers = Object.assign({'apikey':KEY,'Content-Type':'application/json'}, opts.headers||{});
-          if (state.access) headers['Authorization'] = 'Bearer ' + state.access;
-          else headers['Authorization'] = 'Bearer ' + KEY;
-          return fetch(SB + path, Object.assign({}, opts, {headers:headers})).then(function(r){
-            return r.text().then(function(t){
-              var d = null; try { d = t ? JSON.parse(t) : null; } catch(e) { d = t; }
-              if (!r.ok) { var err = new Error((d && (d.message || d.msg || d.error_description)) || ('HTTP ' + r.status)); err.status = r.status; err.data = d; throw err; }
-              return d;
-            });
-          });
-        }
-
-        function fmtDate(iso){
-          if (!iso) return '—';
-          var d = new Date(iso + 'T00:00:00');
-          return d.toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
-        }
-
-        function loadPublic(){
-          return api('/rest/v1/public_prices?select=*&order=confirmed_on.desc&limit=1').then(function(rows){
-            if (!rows || !rows.length) return;
-            state.row = rows[0];
-            state.priceId = rows[0].id;
-            var band = (rows[0].band_low && rows[0].band_high)
-              ? ('From USD ' + Number(rows[0].band_low).toLocaleString('en-US') + '–' + Number(rows[0].band_high).toLocaleString('en-US') + ' / MT')
-              : 'Price on request';
-            $('pd-band').textContent = band;
-            $('pd-date').textContent = fmtDate(rows[0].confirmed_on);
-            var badge = $('pd-badge');
-            if (rows[0].status === 'live') { badge.textContent = 'Live today'; badge.hidden = false; }
-            else { badge.textContent = 'Re-confirm before quote'; badge.hidden = false; }
-          }).catch(function(){
-            $('pd-band').textContent = 'Price on request';
-            $('pd-date').textContent = 'Ask us';
-          });
-        }
-
-        function show(step){
-          Array.prototype.forEach.call(document.querySelectorAll('.pd-step'), function(s){
-            s.hidden = s.getAttribute('data-step') !== step;
-          });
-          var f = document.querySelector('.pd-step[data-step="' + step + '"] input');
-          if (f) setTimeout(function(){ f.focus(); }, 60);
-        }
-        function openModal(){
-          $('pd-modal').hidden = false;
-          document.documentElement.style.overflow = 'hidden';
-          if (state.access) { openPrice().catch(function(){ show('email'); }); } else { show('email'); }
-        }
-        function closeModal(){
-          $('pd-modal').hidden = true;
-          document.documentElement.style.overflow = '';
-        }
-
-        function requestCode(){
-          var email = ($('pd-email').value || '').trim().toLowerCase();
-          var wa = ($('pd-wa').value || '').trim();
-          $('pd-err1').textContent = '';
-          if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) { $('pd-err1').textContent = 'Enter a valid email address.'; return; }
-          var btn = $('pd-send'); btn.disabled = true; btn.textContent = 'Sending…';
-          state.email = email; state.whatsapp = wa;
-          api('/rest/v1/code_requests', {method:'POST', headers:{'Prefer':'return=minimal'}, body:JSON.stringify({email:email})})
-            .then(function(){
-              $('pd-who').textContent = email;
-              show('code');
-            })
-            .catch(function(e){
-              var msg = (e && e.message) || '';
-              if (/rate_limited_email/.test(msg)) $('pd-err1').textContent = 'A code was just sent to this address. Wait two minutes, or check your inbox.';
-              else if (/rate_limited_global/.test(msg)) $('pd-err1').textContent = 'Too many codes requested right now. Try again in a few minutes, or WhatsApp us.';
-              else $('pd-err1').textContent = 'We could not send the code. Try again, or WhatsApp us.';
-            })
-            .then(function(){ btn.disabled = false; btn.textContent = 'Email me the code'; });
-        }
-
-        function verify(){
-          var code = ($('pd-code').value || '').replace(/\D/g,'');
-          $('pd-err2').textContent = '';
-          if (code.length !== 6) { $('pd-err2').textContent = 'The code is 6 digits.'; return; }
-          var btn = $('pd-verify'); btn.disabled = true; btn.textContent = 'Checking…';
-          api('/auth/v1/verify', {method:'POST', body:JSON.stringify({type:'email', email:state.email, token:code})})
-            .then(function(session){
-              state.access = session.access_token;
-              try { sessionStorage.setItem('pd_session', JSON.stringify({t:session.access_token, e:state.email, x:Date.now()+3300000})); } catch(e){}
-              return openPrice();
-            })
-            .catch(function(e){
-              $('pd-err2').textContent = 'That code is wrong or has expired. Ask for a new one.';
-            })
-            .then(function(){ btn.disabled = false; btn.textContent = 'Open the price'; });
-        }
-
-        function openPrice(){
-          return api('/rest/v1/buyer_prices?select=*&limit=1').then(function(rows){
-            show('price');
-            $('pd-done').hidden = true;
-            if (rows && rows.length) {
-              var p = rows[0];
-              state.live = p;
-              $('pd-live').hidden = false;
-              $('pd-request').hidden = true;
-              $('pd-price').textContent = 'USD ' + Number(p.sell_price_usd_mt).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-              var meta = 'FOB ' + (p.port || 'Mundra') + ' · per MT · valid until ' + fmtDate(p.valid_until);
-              $('pd-price-meta').textContent = meta;
-              var br = p.qty_breaks || [];
-              $('pd-breaks').textContent = Array.isArray(br) && br.length
-                ? br.map(function(b){ return (b.qty || b.quantity || '') + ': ' + (b.price ? ('USD ' + Number(b.price).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' / MT') : ''); }).join(' · ')
-                : '';
-              $('pd-breaks').hidden = !(Array.isArray(br) && br.length);
-            } else {
-              state.live = null;
-              $('pd-live').hidden = true;
-              $('pd-request').hidden = false;
-            }
-          });
-        }
-
-        function finishLead(kind){
-          var qty = (kind === 'lock' ? $('pd-qty').value : $('pd-qty2').value || '').trim() || '16 MT';
-          var errEl = kind === 'lock' ? $('pd-err3') : $('pd-err4');
-          var btn = kind === 'lock' ? $('pd-lock') : $('pd-ask');
-          errEl.textContent = '';
-          btn.disabled = true;
-          var rpc = kind === 'lock' ? 'lock_price' : 'request_price';
-          var price = kind === 'lock' && state.live ? Number(state.live.sell_price_usd_mt) : null;
-          api('/rest/v1/rpc/' + rpc, {method:'POST', body:JSON.stringify({p_price_id:state.priceId, p_quantity:qty, p_whatsapp:state.whatsapp || null})})
-            .then(function(){
-              var payload = {
-                product: 'Castor Oil FSG',
-                quantity: qty,
-                email: state.email,
-                whatsapp: state.whatsapp || '',
-                price: price ? ('USD ' + price.toFixed(2) + ' / MT') : 'price on request',
-                time: new Date().toISOString(),
-                source: 'se7.studio price desk'
-              };
-              return fetch('https://formsubmit.co/ajax/sandhuprague@gmail.com', {
-                method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-                body: JSON.stringify(payload)
-              }).catch(function(){ return null; });
-            })
-            .then(function(){
-              $('pd-live').hidden = true;
-              $('pd-request').hidden = true;
-              $('pd-done').hidden = false;
-            })
-            .catch(function(e){
-              errEl.textContent = 'We could not record that. Try again, or WhatsApp us.';
-            })
-            .then(function(){ btn.disabled = false; });
-        }
-
-        function boot(){
-          try {
-            var saved = JSON.parse(sessionStorage.getItem('pd_session') || 'null');
-            if (saved && saved.t && saved.x > Date.now()) { state.access = saved.t; state.email = saved.e; }
-          } catch(e) {}
-          loadPublic();
-          $('pd-open').addEventListener('click', openModal);
-          Array.prototype.forEach.call(document.querySelectorAll('[data-pd-close]'), function(el){ el.addEventListener('click', closeModal); });
-          document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !$('pd-modal').hidden) closeModal(); });
-          $('pd-send').addEventListener('click', requestCode);
-          $('pd-email').addEventListener('keydown', function(e){ if (e.key === 'Enter') requestCode(); });
-          $('pd-verify').addEventListener('click', verify);
-          $('pd-code').addEventListener('keydown', function(e){ if (e.key === 'Enter') verify(); });
-          $('pd-resend').addEventListener('click', function(){ show('email'); requestCode(); });
-          $('pd-lock').addEventListener('click', function(){ finishLead('lock'); });
-          $('pd-ask').addEventListener('click', function(){ finishLead('request'); });
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
-      })();
-      </script>
-
-      <div class="ship reveal" id="spec">
-        <div class="ship__head">
-          <h3>What we source</h3>
-          <p>One live line. The rest of the shelf opens as factories clear.</p>
-        </div>
-        <ul class="ship__list">
-          <li>
-            <span class="ship__name">Castor Oil FSG</span>
-            <span class="ship__detail">200 kg HDPE drums on pallets · 1 × 20-ft, 16 MT net · FOB Mundra</span>
-            <span class="ship__tag is-live">Live</span>
-          </li>
-          <li>
-            <span class="ship__name">12-HSA</span>
-            <span class="ship__detail">Quoted on request · 25 kg bags or 25/50 kg PP or paper bags · first order 1 × 20-ft · Mundra</span>
-            <span class="ship__tag">Quoted</span>
-          </li>
-          <li>
-            <span class="ship__name">Sebacic acid &amp; DCO</span>
-            <span class="ship__detail">Specification on request · packaging and port confirmed at quote</span>
-            <span class="ship__tag">On request</span>
-          </li>
-        </ul>
-        <div class="spec-grid">
-          <article class="spec-card" aria-labelledby="spec-fsg">
-            <h4 class="spec-card__title" id="spec-fsg">Castor Oil FSG <span class="spec-card__tag is-live">Live</span></h4>
-            <dl class="spec-table">
-              <div><dt>Grade</dt><dd>FSG — First Special Grade, BSS-75</dd></div>
-              <div><dt>Viscosity</dt><dd>6.0–9.0 poise at 25 °C</dd></div>
-              <div><dt>Moisture</dt><dd>0.25% max</dd></div>
-              <div><dt>FFA (as oleic)</dt><dd>1.00% max</dd></div>
-              <div><dt>Packing</dt><dd>200 kg HDPE drums on pallets · 80 drums per 20-ft</dd></div>
-              <div><dt>MOQ</dt><dd>1 × 20-ft container (16 MT net)</dd></div>
-              <div><dt>Port</dt><dd>FOB Mundra, India</dd></div>
-              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
-            </dl>
-          </article>
-          <article class="spec-card" aria-labelledby="spec-hsa">
-            <h4 class="spec-card__title" id="spec-hsa">12-HSA <span class="spec-card__tag">Quoted</span></h4>
-            <dl class="spec-table">
-              <div><dt>Grade</dt><dd>12-HSA (12-hydroxystearic acid), flakes or powder</dd></div>
-              <div><dt>Acid value / moisture</dt><dd>Quoted on request — specification confirmed in the quote</dd></div>
-              <div><dt>Packing</dt><dd>25 kg bags, or 25/50 kg PP or paper bags — confirmed at quote</dd></div>
-              <div><dt>MOQ</dt><dd>First order 1 × 20-ft container · mill MOQ confirmed at quote</dd></div>
-              <div><dt>Port</dt><dd>Mundra, India</dd></div>
-              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
-            </dl>
-          </article>
-          <article class="spec-card" aria-labelledby="spec-sebacic">
-            <h4 class="spec-card__title" id="spec-sebacic">Sebacic acid <span class="spec-card__tag">On request</span></h4>
-            <dl class="spec-table">
-              <div><dt>Grade</dt><dd>Sebacic acid, castor-derived</dd></div>
-              <div><dt>Specification</dt><dd>On request — purity, moisture and physical form confirmed at quote</dd></div>
-              <div><dt>Packing</dt><dd>Confirmed at quote</dd></div>
-              <div><dt>MOQ</dt><dd>Confirmed at quote</dd></div>
-              <div><dt>Port</dt><dd>Confirmed at quote</dd></div>
-              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
-            </dl>
-          </article>
-          <article class="spec-card" aria-labelledby="spec-dco">
-            <h4 class="spec-card__title" id="spec-dco">DCO <span class="spec-card__tag">On request</span></h4>
-            <dl class="spec-table">
-              <div><dt>Grade</dt><dd>DCO (dehydrated castor oil)</dd></div>
-              <div><dt>Specification</dt><dd>On request — grade, viscosity and acid value confirmed at quote</dd></div>
-              <div><dt>Packing</dt><dd>Drums or liquid bulk containers — confirmed at quote</dd></div>
-              <div><dt>MOQ</dt><dd>Confirmed at quote</dd></div>
-              <div><dt>Port</dt><dd>Confirmed at quote</dd></div>
-              <div><dt>Revision</dt><dd><time datetime="2026-10-18">18 October 2026</time></dd></div>
-            </dl>
-          </article>
-        </div>
-
-        <div class="docs" id="coa">
-          <div class="docs__head">
-            <h4 class="docs__title">The papers behind the price</h4>
-            <p class="docs__label">COA · lot 14072025 · Spec sheet · FSG / BSS-75</p>
-            <p class="docs__note">Issued by SE7 from the mill's lot certificate: the specified limit and the measured result on every parameter, nothing re-typed, nothing left blank. The signed original and the source mill go to buyers who ask.</p>
-            <p class="docs__note"><a href="#shelf">Full specifications, the castor grades and the questions buyers ask before the first container →</a></p>
-          </div>
-          <div class="docs__grid">
-            <a class="doc" href="proof-media/se7-castor-fsg-coa.pdf" target="_blank" rel="noopener">
-              <img src="proof-media/se7-castor-fsg-coa-p1.webp" alt="SE7 certificate of analysis for refined castor oil FSG, lot 14072025: moisture 0.16%, free fatty acids 0.52%, ricinoleic acid 87.45%, all parameters within specification." width="1200" height="1697" loading="lazy" decoding="async">
-              <span class="doc__cap">COA · lot 14072025 · FSG</span>
-            </a>
-            <a class="doc" href="proof-media/se7-castor-fsg-spec.pdf" target="_blank" rel="noopener">
-              <img src="proof-media/se7-castor-fsg-spec-p1.webp" alt="SE7 product specification for refined castor oil FSG, BSS-75: moisture 0.25% max, free fatty acids 1.00% max, hydroxyl value 160 to 168, FOB Mundra." width="1200" height="1697" loading="lazy" decoding="async">
-              <span class="doc__cap">Spec sheet · FSG / BSS-75</span>
-            </a>
-          </div>
-        </div>
-      </div>
 
 
-    </div>
-  </section>
-
-  <!-- FILM -->
-  <section class="section film" id="film">
-    <div class="wrap film__grid">
-      <div class="film__copy">
-        <span class="eyebrow reveal">The film</span>
-        <h2 class="reveal">From the field to the drum.</h2>
-        <p class="reveal">Thirty-seven seconds inside the line — the plant, the press, the drum, the road. An animated illustration of the castor chain, not footage of our cargo.</p>
-        <ol class="film__steps reveal">
-          <li><span>01</span>Field</li>
-          <li><span>02</span>Press</li>
-          <li><span>03</span>Drum</li>
-        </ol>
-      </div>
-      <div class="film__wrap reveal">
-        <div class="film__frame" id="filmFrame">
-          <video id="castorFilm" poster="media/castor-film-poster.jpg" preload="none" playsinline loop>
-            <source src="media/castor-film.mp4" type="video/mp4">
-          </video>
-          <button class="film__play" type="button" aria-label="Play the castor film"><i></i></button>
-          <button class="film__pause" type="button" aria-label="Pause the castor film"><i></i><i></i></button>
-          <span class="film__time">37s</span>
-        </div>
-        <p class="film__cap">Animated illustration · 37 seconds · not cargo footage</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE SHELF -->
-  <section class="section" id="shelf">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow reveal">The shelf</span>
-          <h2 class="reveal">Seven lines we are opening now.</h2>
-        </div>
-        <p class="reveal">None of these is live yet. Each one is a line we are opening: the factory check runs first, the quote comes second. Send the product, grade, quantity and destination and you get a spec and a date.</p>
-      </div>
-
-      <div class="bento" data-stagger>
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Sourcing</span></div>
-          <h3>Leather small goods</h3>
-          <p>Wallets, purses and card holders. HS 420231. For leather wholesalers, gift brands and department-store suppliers.</p>
-          <a class="card__link" href="start.html?product=Leather%20small%20goods">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
-          <h3>Cotton towels and bed linen</h3>
-          <p>Towels, bathrobes and hotel linen. HS 630260 and 630221. For hotel groups, spa suppliers and home-textile wholesalers.</p>
-          <a class="card__link" href="start.html?product=Cotton%20towels%20and%20bed%20linen">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Sourcing</span></div>
-          <h3>Valve and tap parts</h3>
-          <p>Bodies, stems and cartridges. HS 848190. For valve makers and industrial distributors.</p>
-          <a class="card__link" href="start.html?product=Valve%20and%20tap%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">Sourcing</span></div>
-          <h3>Essential oils</h3>
-          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
-          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">Sourcing</span></div>
-          <h3>Metal caps and closures</h3>
-          <p>Aluminium ROPP, crown and lug caps. HS 8309. For distilleries, food fillers, cosmetics and pharma.</p>
-          <a class="card__link" href="start.html?product=Metal%20caps%20and%20closures">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Sourcing</span></div>
-          <h3>Forged steel parts</h3>
-          <p>Forged and machined components. HS 732619. For machine builders and hardware distributors.</p>
-          <a class="card__link" href="start.html?product=Forged%20steel%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--5 reveal">
-          <div class="card__top"><span class="card__idx">07</span><span class="card__tag">Sourcing</span></div>
-          <h3>Stainless kitchenware</h3>
-          <p>Cookware and serving ware. HS 732393. For houseware wholesalers and retail suppliers.</p>
-          <a class="card__link" href="start.html?product=Stainless%20kitchenware">Ask for this line</a>
-        </article>
-
-        <article class="card card--7 reveal">
-          <div class="card__top"><span class="card__idx">08</span><span class="card__tag">Outside the list</span></div>
-          <h3>Not on the shelf? Send it anyway.</h3>
-          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
-          <a class="card__link" href="start.html">Send your product</a>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- THE DESK / BENTO -->
   <section class="section" id="capabilities">
@@ -1546,42 +1086,9 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
         </article>
         <article class="card card--small reveal">
           <span class="card__big">03</span>
-          <div><h3>Sixteen lines</h3><p>One live, seven sourcing, eight mapped.</p></div>
+          <div><h3>Four grades</h3><p>One live, three quoted on request.</p></div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <!-- LINES -->
-  <section class="section" id="lines">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow reveal">Product lines</span>
-          <h2 class="reveal">Sixteen lines. One live.</h2>
-        </div>
-        <p class="reveal">Castor oil is live today. Seven sourcing lines are open now. The India-first food lines follow.</p>
-      </div>
-
-      <ol class="lines__list" data-stagger>
-        <li class="is-live reveal"><span class="lines__n">01</span><span class="lines__name">Castor oil &amp; derivatives</span><span class="lines__status">Live</span></li>
-        <li class="reveal"><span class="lines__n">02</span><span class="lines__name">Leather small goods</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">03</span><span class="lines__name">Cotton towels and bed linen</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">04</span><span class="lines__name">Valve and tap parts</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">05</span><span class="lines__name">Essential oils</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">06</span><span class="lines__name">Metal caps and closures</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">07</span><span class="lines__name">Forged steel parts</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">08</span><span class="lines__name">Stainless kitchenware</span><span class="lines__status">Sourcing</span></li>
-        <li class="reveal"><span class="lines__n">09</span><span class="lines__name">Psyllium husk</span><span class="lines__status">Validating</span></li>
-        <li class="reveal"><span class="lines__n">10</span><span class="lines__name">Guar gum</span><span class="lines__status">Research</span></li>
-        <li class="reveal"><span class="lines__n">11</span><span class="lines__name">Cumin</span><span class="lines__status">Research</span></li>
-        <li class="reveal"><span class="lines__n">12</span><span class="lines__name">Turmeric</span><span class="lines__status">Research</span></li>
-        <li class="reveal"><span class="lines__n">13</span><span class="lines__name">Chilli</span><span class="lines__status">Research</span></li>
-        <li class="reveal"><span class="lines__n">14</span><span class="lines__name">Darjeeling tea</span><span class="lines__status">Enquiry only</span></li>
-        <li class="reveal"><span class="lines__n">15</span><span class="lines__name">Kashmiri saffron</span><span class="lines__status">Enquiry only</span></li>
-        <li class="reveal"><span class="lines__n">16</span><span class="lines__name">Alphonso mango</span><span class="lines__status">Seasonal</span></li>
-      </ol>
-      <p class="lines__foot reveal"><b>109</b> castor-line factories and <b>274</b> buyer companies researched since September 2026. Sixteen lines mapped, one live. <a href="#shelf">See the shelf</a>.</p>
     </div>
   </section>
 
@@ -1643,13 +1150,12 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       <a class="brand" href="#top" aria-label="SE7 — Sandhu Exports, back to top">
         <span class="brand__se7">SE7</span><span class="brand__studio">Sandhu Exports</span>
       </a>
-      <p>The sourcing desk of Sandhu Exports. Castor oil live; seven sourcing lines open.</p>
+      <p>The sourcing desk of Sandhu Exports. Castor oil FSG live; 12-HSA, sebacic acid and DCO quoted on request.</p>
     </div>
     <div class="footer__col">
       <h4>Company</h4>
-      <a href="#shelf">Products &amp; specifications</a>
+      <a href="#products">Products &amp; specifications</a>
       <a href="#capabilities">The desk</a>
-      <a href="#lines">Lines</a>
       <a href="about.html">About</a>
       <a href="#approach">Approach</a>
     </div>
