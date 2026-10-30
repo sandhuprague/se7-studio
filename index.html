@@ -651,6 +651,10 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   border:1px solid var(--line-2);border-radius:99px;padding:4px 8px;white-space:nowrap;
 }
 .ship__tag.is-live{color:var(--blue);border-color:rgba(41,151,255,.4);background:rgba(41,151,255,.08)}
+.ship__group{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.ship__group::after{content:"";flex:1;height:1px;background:var(--line)}
+.ship__foot{margin:16px 0 0;font-size:13px;line-height:1.6;color:var(--muted)}
+.ship__foot a{color:var(--text);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .ship__docs{
   display:flex;align-items:flex-end;justify-content:space-between;gap:18px 24px;flex-wrap:wrap;
   margin-top:20px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.12);
@@ -1272,8 +1276,10 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       <div class="ship reveal" id="spec">
         <div class="ship__head">
           <h3>What we source</h3>
-          <p>One live line. The rest of the shelf opens as factories clear.</p>
+          <p>No catalogue. Castor is live and priced. The rest are lines we are opening: the factory check runs first, the quote comes second.</p>
         </div>
+
+        <p class="ship__group">Live line — castor oil</p>
         <ul class="ship__list">
           <li>
             <span class="ship__name">Castor Oil FSG</span>
@@ -1291,6 +1297,48 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
             <span class="ship__tag">On request</span>
           </li>
         </ul>
+
+        <p class="ship__group">Opening now — seven lines</p>
+        <ul class="ship__list">
+          <li>
+            <span class="ship__name">Leather small goods</span>
+            <span class="ship__detail">Wallets, purses, card holders · HS 420231 · for leather wholesalers, gift brands and store suppliers</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Towels &amp; bed linen</span>
+            <span class="ship__detail">Towels, bathrobes, hotel linen · HS 630260 / 630221 · for hotel groups, spa suppliers and textile wholesalers</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Valve and tap parts</span>
+            <span class="ship__detail">Bodies, stems, cartridges · HS 848190 · for valve makers and industrial distributors</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Essential oils</span>
+            <span class="ship__detail">Mint, lemongrass, eucalyptus · HS 330129 · for fragrance houses, cosmetics and aromatherapy brands</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Metal caps &amp; closures</span>
+            <span class="ship__detail">Aluminium ROPP, crown, lug caps · HS 8309 · for distilleries, food fillers, cosmetics and pharma</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Forged steel parts</span>
+            <span class="ship__detail">Forged and machined components · HS 732619 · for machine builders and hardware distributors</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+          <li>
+            <span class="ship__name">Stainless kitchenware</span>
+            <span class="ship__detail">Cookware and serving ware · HS 732393 · for houseware wholesalers and retail suppliers</span>
+            <span class="ship__tag">Sourcing</span>
+          </li>
+        </ul>
+        <p class="ship__foot">Not on the list? The desk sources outside it. One product, one specification, one destination is enough to start. <a href="start.html">Send your product →</a></p>
+
+        <p class="ship__group">The live line in full</p>
         <div class="spec-grid">
           <article class="spec-card" aria-labelledby="spec-fsg">
             <h4 class="spec-card__title" id="spec-fsg">Castor Oil FSG <span class="spec-card__tag is-live">Live</span></h4>
