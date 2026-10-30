@@ -470,6 +470,10 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .card>*{position:relative;z-index:1}
 .card--7{grid-column:span 7}
 .card--5{grid-column:span 5}
+.card--4{grid-column:span 4}
+.card--12{grid-column:span 12}
+.card__link{display:inline-block;margin-top:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid rgba(41,151,255,.35);padding-bottom:2px;transition:border-color .2s}
+.card__link:hover{border-bottom-color:var(--blue)}
 .card__top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
 .card__idx{font-size:10.5px;letter-spacing:.18em;color:var(--muted)}
 .card__tag{
@@ -715,7 +719,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 
 /* ---------- responsive ---------- */
 @media (max-width:1024px){
-  .card--7,.card--5{grid-column:span 6}
+  .card--7,.card--5,.card--4{grid-column:span 6}
   .card--small{grid-column:span 4}
   .product__media{min-height:480px}
 }
@@ -825,6 +829,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <nav class="nav__links" aria-label="Primary">
       <a href="#studio">About</a>
       <a href="#products">Products</a>
+      <a href="#shelf">Shelf</a>
       <a href="#capabilities">The desk</a>
       <a href="#lines">Lines</a>
       <a href="#approach">Approach</a>
@@ -843,6 +848,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   <nav aria-label="Mobile">
     <a href="#studio">About</a>
     <a href="#products">Products</a>
+    <a href="#shelf">Shelf</a>
     <a href="#capabilities">The desk</a>
     <a href="#lines">Lines</a>
     <a href="#approach">Approach</a>
@@ -1341,7 +1347,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
             <h4 class="docs__title">The papers behind the price</h4>
             <p class="docs__label">COA · lot 14072025 · Spec sheet · FSG / BSS-75</p>
             <p class="docs__note">Issued by SE7 from the mill's lot certificate: the specified limit and the measured result on every parameter, nothing re-typed, nothing left blank. The signed original and the source mill go to buyers who ask.</p>
-            <p class="docs__note"><a href="products.html">Full specification, all four grades and the questions buyers ask before the first container →</a></p>
+            <p class="docs__note"><a href="#shelf">Seven sourcing lines, and the questions buyers ask before the first container →</a></p>
           </div>
           <div class="docs__grid">
             <a class="doc" href="proof-media/se7-castor-fsg-coa.pdf" target="_blank" rel="noopener">
@@ -1383,6 +1389,77 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
           <span class="film__time">37s</span>
         </div>
         <p class="film__cap">Animated illustration · 37 seconds · not cargo footage</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHELF -->
+  <section class="section" id="shelf">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow reveal">The shelf</span>
+          <h2 class="reveal">Seven lines we are opening now.</h2>
+        </div>
+        <p class="reveal">None of these is live yet. Each one is a line we are opening: the factory check runs first, the quote comes second. Send the product, grade, quantity and destination and you get a spec and a date.</p>
+      </div>
+
+      <div class="bento" data-stagger>
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Sourcing</span></div>
+          <h3>Leather small goods</h3>
+          <p>Wallets, purses and card holders. HS 420231. For leather wholesalers, gift brands and department-store suppliers.</p>
+          <a class="card__link" href="start.html?product=Leather%20small%20goods">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
+          <h3>Cotton towels and bed linen</h3>
+          <p>Towels, bathrobes and hotel linen. HS 630260 and 630221. For hotel groups, spa suppliers and home-textile wholesalers.</p>
+          <a class="card__link" href="start.html?product=Cotton%20towels%20and%20bed%20linen">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Sourcing</span></div>
+          <h3>Valve and tap parts</h3>
+          <p>Bodies, stems and cartridges. HS 848190. For valve makers and industrial distributors.</p>
+          <a class="card__link" href="start.html?product=Valve%20and%20tap%20parts">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">Sourcing</span></div>
+          <h3>Essential oils</h3>
+          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
+          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">Sourcing</span></div>
+          <h3>Metal caps and closures</h3>
+          <p>Aluminium ROPP, crown and lug caps. HS 8309. For distilleries, food fillers, cosmetics and pharma.</p>
+          <a class="card__link" href="start.html?product=Metal%20caps%20and%20closures">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Sourcing</span></div>
+          <h3>Forged steel parts</h3>
+          <p>Forged and machined components. HS 732619. For machine builders and hardware distributors.</p>
+          <a class="card__link" href="start.html?product=Forged%20steel%20parts">Ask for this line</a>
+        </article>
+
+        <article class="card card--4 reveal">
+          <div class="card__top"><span class="card__idx">07</span><span class="card__tag">Sourcing</span></div>
+          <h3>Stainless kitchenware</h3>
+          <p>Cookware and serving ware. HS 732393. For houseware wholesalers and retail suppliers.</p>
+          <a class="card__link" href="start.html?product=Stainless%20kitchenware">Ask for this line</a>
+        </article>
+
+        <article class="card card--12 reveal">
+          <div class="card__top"><span class="card__idx">08</span><span class="card__tag">Outside the list</span></div>
+          <h3>Not on the shelf? Send it anyway.</h3>
+          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
+          <a class="card__link" href="start.html">Send your product</a>
+        </article>
       </div>
     </div>
   </section>
@@ -1506,7 +1583,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
         <li class="reveal"><span class="lines__n">15</span><span class="lines__name">Kashmiri saffron</span><span class="lines__status">Enquiry only</span></li>
         <li class="reveal"><span class="lines__n">16</span><span class="lines__name">Alphonso mango</span><span class="lines__status">Seasonal</span></li>
       </ol>
-      <p class="lines__foot reveal"><b>109</b> castor-line factories and <b>274</b> buyer companies researched since September 2026. Sixteen lines mapped, one live. <a href="products.html">See the shelf</a>.</p>
+      <p class="lines__foot reveal"><b>109</b> castor-line factories and <b>274</b> buyer companies researched since September 2026. Sixteen lines mapped, one live. <a href="#shelf">See the shelf</a>.</p>
     </div>
   </section>
 
@@ -1572,7 +1649,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     </div>
     <div class="footer__col">
       <h4>Company</h4>
-      <a href="products.html">Products &amp; specifications</a>
+      <a href="#shelf">Products &amp; specifications</a>
       <a href="#capabilities">The desk</a>
       <a href="#lines">Lines</a>
       <a href="about.html">About</a>
