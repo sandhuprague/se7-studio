@@ -654,6 +654,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .ship__group{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .ship__group::after{content:"";flex:1;height:1px;background:var(--line)}
 .ship__foot{margin:16px 0 0;font-size:13px;line-height:1.6;color:var(--muted)}
+.ship__shelf{margin-top:24px}
 .ship__foot a{color:var(--text);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .ship__docs{
   display:flex;align-items:flex-end;justify-content:space-between;gap:18px 24px;flex-wrap:wrap;
@@ -831,7 +832,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     <nav class="nav__links" aria-label="Primary">
       <a href="#studio">About</a>
       <a href="#products">Products</a>
-      <a href="#shelf">Shelf</a>
+      <a href="#spec">Shelf</a>
       <a href="#capabilities">The desk</a>
       <a href="#lines">Lines</a>
       <a href="#approach">Approach</a>
@@ -850,7 +851,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   <nav aria-label="Mobile">
     <a href="#studio">About</a>
     <a href="#products">Products</a>
-    <a href="#shelf">Shelf</a>
+    <a href="#spec">Shelf</a>
     <a href="#capabilities">The desk</a>
     <a href="#lines">Lines</a>
     <a href="#approach">Approach</a>
@@ -1276,69 +1277,68 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
       <div class="ship reveal" id="spec">
         <div class="ship__head">
           <h3>What we source</h3>
-          <p>No catalogue. Castor is live and priced. The rest are lines we are opening: the factory check runs first, the quote comes second.</p>
+          <p>Seven lines we are opening now, castor oil live behind them. Send the product, grade, quantity and destination and you get a spec and a date.</p>
         </div>
 
-        <p class="ship__group">Live line — castor oil</p>
-        <ul class="ship__list">
-          <li>
-            <span class="ship__name">Castor Oil FSG</span>
-            <span class="ship__detail">200 kg HDPE drums on pallets · 1 × 20-ft, 16 MT net · FOB Mundra</span>
-            <span class="ship__tag is-live">Live</span>
-          </li>
-          <li>
-            <span class="ship__name">12-HSA</span>
-            <span class="ship__detail">Quoted on request · 25 kg bags or 25/50 kg PP or paper bags · first order 1 × 20-ft · Mundra</span>
-            <span class="ship__tag">Quoted</span>
-          </li>
-          <li>
-            <span class="ship__name">Sebacic acid &amp; DCO</span>
-            <span class="ship__detail">Specification on request · packaging and port confirmed at quote</span>
-            <span class="ship__tag">On request</span>
-          </li>
-        </ul>
+        <div class="bento ship__shelf" data-stagger>
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Sourcing</span></div>
+            <h3>Leather small goods</h3>
+            <p>Wallets, purses and card holders. HS 420231. For leather wholesalers, gift brands and department-store suppliers.</p>
+            <a class="card__link" href="start.html?product=Leather%20small%20goods">Ask for this line</a>
+          </article>
 
-        <p class="ship__group">Opening now — seven lines</p>
-        <ul class="ship__list">
-          <li>
-            <span class="ship__name">Leather small goods</span>
-            <span class="ship__detail">Wallets, purses, card holders · HS 420231 · for leather wholesalers, gift brands and store suppliers</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Towels &amp; bed linen</span>
-            <span class="ship__detail">Towels, bathrobes, hotel linen · HS 630260 / 630221 · for hotel groups, spa suppliers and textile wholesalers</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Valve and tap parts</span>
-            <span class="ship__detail">Bodies, stems, cartridges · HS 848190 · for valve makers and industrial distributors</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Essential oils</span>
-            <span class="ship__detail">Mint, lemongrass, eucalyptus · HS 330129 · for fragrance houses, cosmetics and aromatherapy brands</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Metal caps &amp; closures</span>
-            <span class="ship__detail">Aluminium ROPP, crown, lug caps · HS 8309 · for distilleries, food fillers, cosmetics and pharma</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Forged steel parts</span>
-            <span class="ship__detail">Forged and machined components · HS 732619 · for machine builders and hardware distributors</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-          <li>
-            <span class="ship__name">Stainless kitchenware</span>
-            <span class="ship__detail">Cookware and serving ware · HS 732393 · for houseware wholesalers and retail suppliers</span>
-            <span class="ship__tag">Sourcing</span>
-          </li>
-        </ul>
-        <p class="ship__foot">Not on the list? The desk sources outside it. One product, one specification, one destination is enough to start. <a href="start.html">Send your product →</a></p>
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
+            <h3>Cotton towels and bed linen</h3>
+            <p>Towels, bathrobes and hotel linen. HS 630260 and 630221. For hotel groups, spa suppliers and home-textile wholesalers.</p>
+            <a class="card__link" href="start.html?product=Cotton%20towels%20and%20bed%20linen">Ask for this line</a>
+          </article>
 
-        <p class="ship__group">The live line in full</p>
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Sourcing</span></div>
+            <h3>Valve and tap parts</h3>
+            <p>Bodies, stems and cartridges. HS 848190. For valve makers and industrial distributors.</p>
+            <a class="card__link" href="start.html?product=Valve%20and%20tap%20parts">Ask for this line</a>
+          </article>
+
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">04</span><span class="card__tag">Sourcing</span></div>
+            <h3>Essential oils</h3>
+            <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
+            <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
+          </article>
+
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">05</span><span class="card__tag">Sourcing</span></div>
+            <h3>Metal caps and closures</h3>
+            <p>Aluminium ROPP, crown and lug caps. HS 8309. For distilleries, food fillers, cosmetics and pharma.</p>
+            <a class="card__link" href="start.html?product=Metal%20caps%20and%20closures">Ask for this line</a>
+          </article>
+
+          <article class="card card--4 reveal">
+            <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Sourcing</span></div>
+            <h3>Forged steel parts</h3>
+            <p>Forged and machined components. HS 732619. For machine builders and hardware distributors.</p>
+            <a class="card__link" href="start.html?product=Forged%20steel%20parts">Ask for this line</a>
+          </article>
+
+          <article class="card card--5 reveal">
+            <div class="card__top"><span class="card__idx">07</span><span class="card__tag">Sourcing</span></div>
+            <h3>Stainless kitchenware</h3>
+            <p>Cookware and serving ware. HS 732393. For houseware wholesalers and retail suppliers.</p>
+            <a class="card__link" href="start.html?product=Stainless%20kitchenware">Ask for this line</a>
+          </article>
+
+          <article class="card card--7 reveal">
+            <div class="card__top"><span class="card__idx">08</span><span class="card__tag">Outside the list</span></div>
+            <h3>Not on the shelf? Send it anyway.</h3>
+            <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
+            <a class="card__link" href="start.html">Send your product</a>
+          </article>
+        </div>
+
+        <p class="ship__group">Live line — castor oil in full</p>
         <div class="spec-grid">
           <article class="spec-card" aria-labelledby="spec-fsg">
             <h4 class="spec-card__title" id="spec-fsg">Castor Oil FSG <span class="spec-card__tag is-live">Live</span></h4>
@@ -1393,7 +1393,6 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
             <h4 class="docs__title">The papers behind the price</h4>
             <p class="docs__label">COA · lot 14072025 · Spec sheet · FSG / BSS-75</p>
             <p class="docs__note">Issued by SE7 from the mill's lot certificate: the specified limit and the measured result on every parameter, nothing re-typed, nothing left blank. The signed original and the source mill go to buyers who ask.</p>
-            <p class="docs__note"><a href="#shelf">Full specifications, the castor grades and the questions buyers ask before the first container →</a></p>
           </div>
           <div class="docs__grid">
             <a class="doc" href="proof-media/se7-castor-fsg-coa.pdf" target="_blank" rel="noopener">
@@ -1439,76 +1438,6 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     </div>
   </section>
 
-  <!-- THE SHELF -->
-  <section class="section" id="shelf">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow reveal">The shelf</span>
-          <h2 class="reveal">Seven lines we are opening now.</h2>
-        </div>
-        <p class="reveal">None of these is live yet. Each one is a line we are opening: the factory check runs first, the quote comes second. Send the product, grade, quantity and destination and you get a spec and a date.</p>
-      </div>
-
-      <div class="bento" data-stagger>
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">01</span><span class="card__tag">Sourcing</span></div>
-          <h3>Leather small goods</h3>
-          <p>Wallets, purses and card holders. HS 420231. For leather wholesalers, gift brands and department-store suppliers.</p>
-          <a class="card__link" href="start.html?product=Leather%20small%20goods">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">02</span><span class="card__tag">Sourcing</span></div>
-          <h3>Cotton towels and bed linen</h3>
-          <p>Towels, bathrobes and hotel linen. HS 630260 and 630221. For hotel groups, spa suppliers and home-textile wholesalers.</p>
-          <a class="card__link" href="start.html?product=Cotton%20towels%20and%20bed%20linen">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">03</span><span class="card__tag">Sourcing</span></div>
-          <h3>Valve and tap parts</h3>
-          <p>Bodies, stems and cartridges. HS 848190. For valve makers and industrial distributors.</p>
-          <a class="card__link" href="start.html?product=Valve%20and%20tap%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">04</span><span class="card__tag">Sourcing</span></div>
-          <h3>Essential oils</h3>
-          <p>Mint, lemongrass and eucalyptus. HS 330129. For fragrance houses, cosmetics and aromatherapy brands.</p>
-          <a class="card__link" href="start.html?product=Essential%20oils">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">05</span><span class="card__tag">Sourcing</span></div>
-          <h3>Metal caps and closures</h3>
-          <p>Aluminium ROPP, crown and lug caps. HS 8309. For distilleries, food fillers, cosmetics and pharma.</p>
-          <a class="card__link" href="start.html?product=Metal%20caps%20and%20closures">Ask for this line</a>
-        </article>
-
-        <article class="card card--4 reveal">
-          <div class="card__top"><span class="card__idx">06</span><span class="card__tag">Sourcing</span></div>
-          <h3>Forged steel parts</h3>
-          <p>Forged and machined components. HS 732619. For machine builders and hardware distributors.</p>
-          <a class="card__link" href="start.html?product=Forged%20steel%20parts">Ask for this line</a>
-        </article>
-
-        <article class="card card--5 reveal">
-          <div class="card__top"><span class="card__idx">07</span><span class="card__tag">Sourcing</span></div>
-          <h3>Stainless kitchenware</h3>
-          <p>Cookware and serving ware. HS 732393. For houseware wholesalers and retail suppliers.</p>
-          <a class="card__link" href="start.html?product=Stainless%20kitchenware">Ask for this line</a>
-        </article>
-
-        <article class="card card--7 reveal">
-          <div class="card__top"><span class="card__idx">08</span><span class="card__tag">Outside the list</span></div>
-          <h3>Not on the shelf? Send it anyway.</h3>
-          <p>The desk is built to source outside this list. One product, one specification, one destination is enough to start.</p>
-          <a class="card__link" href="start.html">Send your product</a>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- THE DESK / BENTO -->
   <section class="section" id="capabilities">
@@ -1629,7 +1558,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
         <li class="reveal"><span class="lines__n">15</span><span class="lines__name">Kashmiri saffron</span><span class="lines__status">Enquiry only</span></li>
         <li class="reveal"><span class="lines__n">16</span><span class="lines__name">Alphonso mango</span><span class="lines__status">Seasonal</span></li>
       </ol>
-      <p class="lines__foot reveal"><b>109</b> castor-line factories and <b>274</b> buyer companies researched since September 2026. Sixteen lines mapped, one live. <a href="#shelf">See the shelf</a>.</p>
+      <p class="lines__foot reveal"><b>109</b> castor-line factories and <b>274</b> buyer companies researched since September 2026. Sixteen lines mapped, one live. <a href="#spec">See the shelf</a>.</p>
     </div>
   </section>
 
@@ -1695,7 +1624,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     </div>
     <div class="footer__col">
       <h4>Company</h4>
-      <a href="#shelf">Products &amp; specifications</a>
+      <a href="#spec">Products &amp; specifications</a>
       <a href="#capabilities">The desk</a>
       <a href="#lines">Lines</a>
       <a href="about.html">About</a>
