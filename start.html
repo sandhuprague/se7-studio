@@ -121,6 +121,9 @@ main{position:relative;z-index:2}
 form{display:flex;flex-direction:column;gap:24px;margin-top:28px}
 .form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{display:flex;flex-direction:column;gap:7px}
+.field--check label{display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-size:15px;color:rgba(245,245,247,.86);cursor:pointer}
+.field--check input{width:18px;height:18px;accent-color:#2997FF;flex:0 0 auto}
+.field--check .opt{text-transform:none;letter-spacing:0}
 .field--full{grid-column:1/-1}
 .field label,.role legend{
   font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
@@ -372,6 +375,9 @@ footer{position:relative;z-index:2;margin-top:clamp(60px,9vw,96px);border-top:1p
           <label for="quickPort">Port <span class="opt">optional</span></label>
           <input type="text" id="quickPort" name="port" placeholder="e.g. Rotterdam">
         </div>
+      </div>
+      <div class="field field--check">
+        <label for="quickDocs"><input type="checkbox" id="quickDocs" name="send_documents" value="audit file + COA + sample"> Send me the audit file, the COA and a sample <span class="opt">with the quote</span></label>
       </div>
       <div class="quick__foot">
         <button type="submit" class="submit">Get my price</button>
