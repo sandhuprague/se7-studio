@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SE7 fee schedule</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:16mm 20mm 12mm; background:#000; color:#F5F5F7; font-family:-apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { background:#000; padding:0; }
+  .top { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid #2A2A2C; padding-bottom:14px; }
+  .mark { font-size:20px; font-weight:700; letter-spacing:.04em; }
+  .who { font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; margin-top:6px; }
+  .doc { text-align:right; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; line-height:1.8; }
+  h1 { font-size:28px; line-height:1.15; margin:26px 0 10px; letter-spacing:-.02em; }
+  .lead { font-size:13px; line-height:1.6; color:#C9C9CE; max-width:150mm; margin:0 0 22px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+  .box { border:1px solid #2A2A2C; border-radius:14px; padding:14px 16px; background:#111113; }
+  .k { font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; margin-bottom:6px; }
+  .v { font-size:22px; font-weight:650; letter-spacing:-.01em; }
+  .v small { font-size:11px; font-weight:400; color:#8A8A8E; letter-spacing:0; }
+  h2 { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8A8A8E; margin:22px 0 10px; font-weight:600; }
+  p, li { font-size:12.5px; line-height:1.6; color:#D8D8DC; }
+  ul { margin:0; padding-left:16px; }
+  li { margin-bottom:6px; }
+  table { width:100%; border-collapse:collapse; margin:6px 0 4px; }
+  th, td { text-align:left; font-size:12px; padding:7px 0; border-bottom:1px solid #222224; color:#D8D8DC; }
+  th { color:#8A8A8E; font-weight:500; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; }
+  .note { border-left:2px solid #4C7DFF; padding:10px 0 10px 12px; margin:16px 0 0; font-size:12px; color:#C9C9CE; }
+  .foot { margin-top:26px; border-top:1px solid #2A2A2C; padding-top:10px; display:flex; justify-content:space-between; font-size:9.5px; letter-spacing:.08em; color:#6E6E73; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="top">
+    <div>
+      <div class="mark">SE7</div>
+      <div class="who">Sandhu Exports &middot; Prague</div>
+    </div>
+    <div class="doc">Fee schedule<br>6 November 2026<br>Version 1.0</div>
+  </div>
+
+  <h1>What we charge, and when.</h1>
+  <p class="lead">Seeing a price costs nothing. We are paid only when your goods actually ship, as a percentage of the FOB value of the container. No retainer, no subscription, no charge before loading.</p>
+
+  <div class="grid">
+    <div class="box"><div class="k">Standard fee</div><div class="v">5% <small>of FOB value</small></div></div>
+    <div class="box"><div class="k">On orders above $100,000</div><div class="v">3% <small>of FOB value</small></div></div>
+    <div class="box"><div class="k">Minimum per shipment</div><div class="v">$600</div></div>
+    <div class="box"><div class="k">When we invoice</div><div class="v">After loading <small>bill of lading date</small></div></div>
+  </div>
+
+  <h2>Worked example</h2>
+  <table>
+    <tr><th>Item</th><th class="n">Amount</th></tr>
+    <tr><td>Castor Oil FSG, 16 MT net per 20-ft, FOB Mundra</td><td class="n">USD 34,524</td></tr>
+    <tr><td>Our fee at 5%</td><td class="n">USD 1,726</td></tr>
+    <tr><td>Paid by you before loading</td><td class="n">USD 0</td></tr>
+  </table>
+  <p style="font-size:11px;color:#8A8A8E;margin:6px 0 0;">Based on the last confirmed mill price of USD 2,157.75/MT. The live price at the time of your quote applies.</p>
+
+  <h2>The rules behind the number</h2>
+  <ul>
+    <li><strong>One side only.</strong> We are paid by you, the buyer, or we are paid by the mill. Never both on the same order. If a mill pays us, that fee is written into the FOB price you see before you commit.</li>
+    <li><strong>Nothing before goods move.</strong> Quotes, factory checks, samples and specification work are free. The first invoice is issued after the container loads.</li>
+    <li><strong>The rate is fixed for the order.</strong> Once we confirm the fee in writing, it does not change, whatever the mill price does after that.</li>
+    <li><strong>Pass-through costs are at cost.</strong> Third-party lab tests, factory audits and pre-shipment inspections are billed at the supplier invoice, with the invoice attached, and only if you ask for them.</li>
+  </ul>
+
+  <p class="note">If a shipment is cancelled after loading, or the goods fail pre-shipment inspection, no fee is due. We would rather lose the fee than ship a bad container.</p>
+
+  <div class="foot">
+    <span>SE7 &middot; SANDHU EXPORTS / se7.studio / hello@se7.studio</span>
+    <span>Fee schedule v1.0 &middot; 6 Nov 2026</span>
+  </div>
+</div>
+</body>
+</html>
