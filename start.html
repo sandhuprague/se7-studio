@@ -122,8 +122,8 @@ form{display:flex;flex-direction:column;gap:24px;margin-top:28px}
 .form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{display:flex;flex-direction:column;gap:7px}
 .field--check{display:block}
-.field--check label{display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-size:15px;line-height:1.4;color:rgba(245,245,247,.86);cursor:pointer;width:100%;white-space:normal;overflow-wrap:anywhere}
-.field--check label span{flex:1 1 auto;min-width:0}
+.field--check label{display:grid;grid-template-columns:18px 1fr;gap:10px;text-transform:none;letter-spacing:0;font-size:15px;line-height:1.4;color:rgba(245,245,247,.86);cursor:pointer;width:100%;white-space:normal}
+.field--check label span{grid-column:2;min-width:0}
 .field--check input{width:18px;height:18px;accent-color:#2997FF;flex:0 0 auto;margin:0}
 .field--check .opt{color:rgba(245,245,247,.5)}
 .field--full{grid-column:1/-1}
