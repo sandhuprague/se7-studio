@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SE7 sourcing desk — how a request runs</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:16mm 20mm 12mm; background:#000; color:#F5F5F7; font-family:-apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { background:#000; padding:0; }
+  .top { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid #2A2A2C; padding-bottom:14px; }
+  .mark { font-size:20px; font-weight:700; letter-spacing:.04em; }
+  .who { font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; margin-top:6px; }
+  .doc { text-align:right; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; line-height:1.8; }
+  h1 { font-size:27px; line-height:1.15; margin:24px 0 8px; letter-spacing:-.02em; }
+  .lead { font-size:12.5px; line-height:1.6; color:#C9C9CE; max-width:152mm; margin:0 0 14px; }
+  h2 { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8A8A8E; margin:16px 0 6px; font-weight:600; }
+  p, li { font-size:12px; line-height:1.55; color:#D8D8DC; }
+  .steps { margin:0; padding:0; list-style:none; counter-reset:s; }
+  .steps li { counter-increment:s; position:relative; padding:8px 0 8px 34px; border-bottom:1px solid #222224; }
+  .steps li:last-child { border-bottom:0; }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:8px; width:22px; height:22px; border-radius:50%; border:1px solid #3A3A3C; color:#F5F5F7; font-size:11px; font-weight:600; display:flex; align-items:center; justify-content:center; }
+  .steps b { color:#fff; font-weight:600; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:4px 0 0; }
+  .box { border:1px solid #2A2A2C; border-radius:14px; padding:11px 14px; background:#111113; }
+  .k { font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A8A8E; margin-bottom:5px; }
+  .v { font-size:17px; font-weight:650; }
+  .v small { font-size:10.5px; font-weight:400; color:#8A8A8E; }
+  .note { border-left:2px solid #4C7DFF; padding:8px 0 8px 12px; margin:11px 0 0; font-size:11.5px; color:#C9C9CE; }
+  .foot { margin-top:16px; border-top:1px solid #2A2A2C; padding-top:9px; display:flex; justify-content:space-between; font-size:9px; letter-spacing:.08em; color:#6E6E73; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="top">
+    <div>
+      <div class="mark">SE7</div>
+      <div class="who">Sandhu Exports &middot; Prague</div>
+    </div>
+    <div class="doc">Sourcing desk<br>Process sheet<br>6 November 2026</div>
+  </div>
+
+  <h1>How a sourcing request runs.</h1>
+  <p class="lead">One written path from your specification to a loaded container. It applies to every line except castor oil, which runs on a live, dated mill price instead.</p>
+
+  <h2>The six steps</h2>
+  <ol class="steps">
+    <li><b>You send the specification.</b> Product, grade, quantity, packing preference and destination port. One product and one destination is enough to start.</li>
+    <li><b>We check the factory.</b> Site details, direct contact, grade and packing verified before any name is shared. A directory listing is discovery, not proof.</li>
+    <li><b>You get a project quote.</b> Grade, packing, port, lead time and validity in one document. Default validity is 30 days, shorter where the market moves.</li>
+    <li><b>Sample approved.</b> A pre-shipment sample goes against the agreed specification. Sample and factory verification are free.</li>
+    <li><b>Loading and documents.</b> The lot ships from the mill. Per-lot COA, third-party inspection notes where the line supports it, and HS codes travel with it.</li>
+    <li><b>We invoice after loading.</b> On the bill of lading date, once the container is on board. Nothing is payable before that.</li>
+  </ol>
+
+  <h2>What it costs</h2>
+  <div class="grid">
+    <div class="box"><div class="k">Standard</div><div class="v">5% <small>of FOB value</small></div></div>
+    <div class="box"><div class="k">Above USD 100,000</div><div class="v">3% <small>of FOB value</small></div></div>
+    <div class="box"><div class="k">Minimum per shipment</div><div class="v">USD 600</div></div>
+    <div class="box"><div class="k">Invoiced</div><div class="v">After loading <small>B/L date</small></div></div>
+  </div>
+
+  <h2>Two rules that do not move</h2>
+  <ul style="margin:0;padding-left:16px;">
+    <li><b>One side pays.</b> You or the mill, never both on the same order. The paying side is fixed in writing before any commitment.</li>
+    <li><b>No fee on a failed shipment.</b> Cancelled after loading, or failed pre-shipment inspection: nothing is due.</li>
+  </ul>
+
+  <p class="note">Pass-through costs — lab tests, factory audits, pre-shipment inspections — are billed at the supplier invoice, with the invoice attached, and only when you ask for them.</p>
+
+  <div class="foot">
+    <span>SE7 &middot; SANDHU EXPORTS / se7.studio / hello@se7.studio</span>
+    <span>Process sheet v1.0 &middot; 6 Nov 2026</span>
+  </div>
+</div>
+</body>
+</html>
